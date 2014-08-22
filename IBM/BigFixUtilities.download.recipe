@@ -3,38 +3,29 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads latest QnA.app.</string>
+    <string>Downloads latest version of IBM Endpoint Manager BES Agent Utilities</string>
     <key>Identifier</key>
-    <string>com.github.rustymyers.download.QnA</string>
+    <string>com.github.rustymyers.download.BigFixUtilities</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>QnA</string>
+        <string>BigFixUtilities</string>
+        <key>DOWNLOAD_URL</key>
+        <string>http://support.bigfix.com/install/besclients-nonwindows.html</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>Process</key>
     <array>
-    <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>http://support.bigfix.com/install/besclients-nonwindows.html</string>
-                <key>re_pattern</key>
-                <string>Mac OS&lt;/h2&gt;\n&lt;b&gt;(?P&lt;version&gt;[0-9].*[0-9])</string>
-            </dict>
-        </dict>
         <dict>
             <key>Processor</key>
             <string>URLTextSearcher</string>
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://support.bigfix.com/install/besclients-nonwindows.html</string>
+                <string>%DOWNLOAD_URL%</string>
                 <key>re_pattern</key>
-                <string>a href=.?(?P&lt;url&gt;http.*?%version%.*?\.dmg).*utilities</string>
+                <string>(?P&lt;url&gt;http://software.bigfix.com/download/bes/.*?/BESAgent-.*?-BigFix_MacOSX.*?.dmg)</string>
             </dict>
         </dict>
         <dict>
