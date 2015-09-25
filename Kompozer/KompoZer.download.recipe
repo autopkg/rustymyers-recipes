@@ -8,28 +8,42 @@
     <string>com.github.rustymyers.download.kompozer</string>
     <key>Input</key>
     <dict>
-        <key>SOURCEFORGE_FILE_PATTERN</key>
-    	<string>kompozer.*mac-universal.dmg</string>
-    	<key>SOURCEFORGE_PROJECT_ID</key>
-    	<string>170132</string>
+    	<key>DOWNLOAD_URL</key>
+    	<string>http://sourceforge.net/projects/kompozer/files/latest/download</string>
     	<key>NAME</key>
 		<string>KompoZer</string>
+		<key>USER_AGENT</key>
+        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.28.10 (KHTML, like Gecko) Version/6.0.3 Safari/536.28.10</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.9</string>
+    <string>0.5.0</string>
     <key>Process</key>
     <array>
         <dict>
-			<key>Processor</key>
-			<string>SourceForgeURLProvider</string>
-		</dict>
+            <key>Processor</key>
+            <string>CURLTextSearcher</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%DOWNLOAD_URL%</string>
+                <key>re_pattern</key>
+                <string>current.*/.*.dmg</string>
+                <key>request_headers</key>
+                <dict>
+                	<key>user-agent</key>
+                	<string>%USER_AGENT%</string>
+                </dict>
+            </dict>
+        </dict>
 		<dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>http://iweb.dl.sourceforge.net/project/kompozer/%match%</string>
 			</dict>
 		</dict>
         <dict>
