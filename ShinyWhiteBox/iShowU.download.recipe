@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads iShowU 1.92.11.</string>
+    <string>Download latest iShowU dmg.</string>
     <key>Identifier</key>
     <string>com.github.rustymyers.download.iShowU</string>
     <key>Input</key>
@@ -15,11 +15,22 @@
     <array>
         <dict>
             <key>Processor</key>
+            <string>URLTextSearcher</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>http://www.shinywhitebox.com/store/changelog.php?p=1</string>
+                <key>re_pattern</key>
+                <string>(?P&lt;dmg&gt;http://www.shinywhitebox.com/downloads/iShowU_(?P&lt;version&gt;[0-9.]+)\.dmg)</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
             <string>URLDownloader</string>
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://www.shinywhitebox.com/downloads/iShowU_1.92.11.dmg</string>
+                <string>%dmg%</string>
             </dict>
         </dict>
         <dict>
