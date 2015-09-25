@@ -8,33 +8,30 @@
     <string>com.github.rustymyers.download.kompozer</string>
     <key>Input</key>
     <dict>
+        <key>SOURCEFORGE_FILE_PATTERN</key>
+    	<string>kompozer.*mac-universal.dmg</string>
+    	<key>SOURCEFORGE_PROJECT_ID</key>
+    	<string>170132</string>
+    	<key>NAME</key>
+		<string>KompoZer</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>Process</key>
     <array>
         <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>http://kompozer.sourceforge.net</string>
-                <key>re_pattern</key>
-                <string>http.*mac.dmg</string>
-                <key>result_output_var_name</key>
-                <string>url</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLDownloader</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>%url%</string>
-            </dict>
-        </dict>
+			<key>Processor</key>
+			<string>SourceForgeURLProvider</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+			</dict>
+		</dict>
         <dict>
             <key>Processor</key>
             <string>EndOfCheckPhase</string>
