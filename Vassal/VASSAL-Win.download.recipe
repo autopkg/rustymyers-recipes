@@ -7,7 +7,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of VASSAL.</string>
 	<key>Identifier</key>
-	<string>com.github.rustymyers.download.VASSAL</string>
+	<string>com.github.rustymyers.download.VASSAL-Win</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
