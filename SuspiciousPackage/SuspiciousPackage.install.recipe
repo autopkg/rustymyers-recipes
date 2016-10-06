@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads and installs the current release version of TextMate 1.5.</string>
 	<key>Identifier</key>
-	<string>com.github.rustymyers.install.TextMate</string>
+	<string>com.github.rustymyers.install.SuspiciousPackage</string>
 	<key>Input</key>
 	<dict>
 	</dict>
