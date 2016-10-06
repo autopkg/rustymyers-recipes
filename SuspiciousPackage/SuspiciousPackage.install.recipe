@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and installs the current release version of TextMate 1.5.</string>
+	<string>Downloads and installs the current release version of SuspiciousPackage.</string>
 	<key>Identifier</key>
 	<string>com.github.rustymyers.install.SuspiciousPackage</string>
 	<key>Input</key>
