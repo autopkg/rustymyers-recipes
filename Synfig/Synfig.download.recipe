@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Download latest Synfig dmg.</string>
+    <string>Download latest Synfig dmg. Permission was obtained from FossHub to automate the download of this software. Please follow their terms of service: https://www.fosshub.com/tos.html</string>
     <key>Identifier</key>
     <string>com.github.rustymyers.download.Synfig</string>
     <key>Input</key>
