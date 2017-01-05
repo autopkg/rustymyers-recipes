@@ -17,7 +17,7 @@
         <key>SEARCH_PATTERN2</key>
         <string>(https.*-64bit.exe)</string>
         <key>USER_AGENT</key>
-        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.28.10 (KHTML, like Gecko) Version/6.0.3 Safari/536.28.10</string>
+        <string>Mozilla/5.0 (Windows NT 6.3; Win64, x64; Trident/7.0; rv:11.0) like Gecko</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.9</string>
@@ -56,6 +56,8 @@
                     <dict>
                             <key>user-agent</key>
                             <string>%USER_AGENT%</string>
+                            <key>Referer</key>
+                            <string>https://www.fosshub.com/Synfig.html</string>
                     </dict>
             </dict>
         </dict>
