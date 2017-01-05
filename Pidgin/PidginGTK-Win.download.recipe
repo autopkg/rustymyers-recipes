@@ -16,6 +16,8 @@
         <string>\/Pidgin.html.(pidgin-([0-9]{1,}.[0-9]{1,}.[0-9]{1,})-offline.exe)</string>
         <key>SEARCH_PATTERN2</key>
         <string>(https.*-offline.exe)</string>
+        <key>SEARCH_PATTERN3</key>
+        <string>pidgin-([0-9]{1,}.[0-9]{1,}.[0-9]{1,})</string>
         <key>USER_AGENT</key>
         <string>Mozilla/5.0 (Windows NT 6.3; Win64, x64; Trident/7.0; rv:11.0) like Gecko</string>
     </dict>
@@ -40,11 +42,25 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
+                <string>https://www.fosshub.com/Pidgin.html</string>
+                <key>re_pattern</key>
+                <string>%SEARCH_PATTERN3%</string>
+                <key>result_output_var_name</key>
+                <string>version</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
                 <string>https://www.fosshub.com/Pidgin.html/%match%-offline.exe</string>
                 <key>re_pattern</key>
                 <string>%SEARCH_PATTERN2%</string>
             </dict>
         </dict>
+
         <dict>
             <key>Processor</key>
             <string>URLDownloader</string>
@@ -61,41 +77,6 @@
                     </dict>
             </dict>
         </dict>
-		<dict>
-		            <key>Processor</key>
-		            <string>com.github.hansen-m.SharedProcessors/WinInstallerExtractor</string>
-		            <key>Arguments</key>
-		            <dict>
-		                <key>exe_path</key>
-		                <string>%pathname%</string>
-		                <key>extract_dir</key>
-		                <string>ExeExtract</string>
-		            </dict>
-		        </dict>
-		        <dict>
-		            <key>Processor</key>
-		            <string>com.github.hansen-m.SharedProcessors/BESRelevanceProvider</string>
-		            <key>Arguments</key>
-		            <dict>
-		                <key>bes_filepath</key>
-		                <string>%pathname%</string>
-		                <key>output_var_name</key>
-		                <string>version</string>
-		                <key>bes_relevance</key>
-		                <string>following text of first "Version=" of line whose (it starts with "Version=") of file "%RECIPE_CACHE_DIR%/ExeExtract/core/application.ini"</string>
-		            </dict>
-		        </dict>
-		        <dict>
-		            <key>Processor</key>
-		            <string>PathDeleter</string>
-		            <key>Arguments</key>
-		            <dict>
-		                <key>path_list</key>
-		                <array>
-		                    <string>%RECIPE_CACHE_DIR%/ExeExtract</string>
-		                </array>
-		            </dict>
-		        </dict>
         <dict>
             <key>Processor</key>
             <string>EndOfCheckPhase</string>
