@@ -15,7 +15,7 @@
         <key>SEARCH_PATTERN</key>
         <string>(\/download.*\/txpeng.*32.zip)</string>
         <key>SEARCH_PATTERN2</key>
-        <string>td class="dl" align="center">([0-9].[0-9].[0-9])<</string>
+        <string>td class="dl" align="center"&gt;([0-9].[0-9].[0-9])&lt;</string>
         <key>USER_AGENT</key>
         <string>Mozilla/4.0</string>
     </dict>
