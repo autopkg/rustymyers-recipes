@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string></string>
+    <string>TextPad is a powerful, general purpose editor for plain text files. Easy to use, with all the features a power user requires.</string>
     <key>Identifier</key>
     <string>com.github.rustymyers.download.TextPad-Win</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>Synfig</string>
+        <string>TextPad</string>
         <key>SEARCH_URL</key>
         <string>https://www.textpad.com/download/index.html</string>
         <key>SEARCH_PATTERN</key>
@@ -43,7 +43,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>%match%</string>
+                <string>https://www.textpad.com/%match%</string>
                 <key>request_headers</key>
                     <dict>
                             <key>user-agent</key>
