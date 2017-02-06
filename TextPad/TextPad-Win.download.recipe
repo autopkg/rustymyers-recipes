@@ -13,7 +13,7 @@
         <key>SEARCH_URL</key>
         <string>https://www.textpad.com/download/index.html</string>
         <key>SEARCH_PATTERN</key>
-        <string>(\/download.*\/txpeng.*32.zip)</string>
+        <string>(\/download.*\/txpeng.*64.zip)</string>
         <key>USER_AGENT</key>
         <string>Mozilla/4.0</string>
     </dict>
