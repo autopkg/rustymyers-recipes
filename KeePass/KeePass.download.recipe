@@ -20,8 +20,8 @@
 			<dict>
 				<key>SOURCEFORGE_FILE_PATTERN</key>
 				<string>KeePass-2.[0-9]{1,}.msi</string>
-				<key>SOURCEFORGE_PROJECT_ID</key>
-				<integer>95013</integer>
+				<key>SOURCEFORGE_PROJECT_NAME</key>
+				<string>keepass</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.rustymyers.SharedProcessors/SourceForgeURLProvider</string>
