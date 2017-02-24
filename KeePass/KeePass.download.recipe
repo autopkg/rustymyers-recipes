@@ -24,7 +24,7 @@
 				<integer>95013</integer>
 			</dict>
 			<key>Processor</key>
-			<string>SourceForgeURLProvider</string>
+			<string>com.github.rustymyers.SharedProcessors/SourceForgeURLProvider</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
