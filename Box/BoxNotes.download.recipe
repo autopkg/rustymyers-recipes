@@ -5,11 +5,11 @@
     <key>Description</key>
     <string>Downloads the latest version of Box Notes.</string>
     <key>Identifier</key>
-    <string>com.github.hansen-m.download.boxnotes</string>
+    <string>com.github.rustymyers.download.boxnotes</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>Box Notes</string>
+        <string>BoxNotes</string>
         <key>DOWNLOAD_URL</key>
         <string>https://e3.boxcdn.net/box-installers/boxnotes/mac/latest/Box%20Notes.zip</string>
         <key>USER_AGENT</key>
