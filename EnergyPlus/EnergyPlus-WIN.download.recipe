@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Download latest EnergyPlus dmg.</string>
     <key>Identifier</key>
-    <string>com.github.rustymyers.download.EnergyPlus</string>
+    <string>com.github.rustymyers.download.EnergyPlus-Win</string>
     <key>Input</key>
     <dict>
     </dict>
