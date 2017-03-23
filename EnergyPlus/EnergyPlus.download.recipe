@@ -26,6 +26,15 @@
         </dict>
         <dict>
             <key>Processor</key>
+            <string>URLDownloader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%match%</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
             <string>URLTextSearcher</string>
             <key>Arguments</key>
             <dict>
@@ -34,15 +43,6 @@
                 <key>re_pattern</key>
                 <string><![CDATA[<span class="label label-info medium-text">(?P<version>[0-9.]+)<\/span>]]></string>
                 <!-- <span class="label label-info medium-text">8.6.0</span> -->
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLDownloader</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>%match%</string>
             </dict>
         </dict>
         <dict>
