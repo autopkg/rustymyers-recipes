@@ -17,7 +17,7 @@
         <key>SEARCH_PATTERN2</key>
         <string>pidgin-([0-9]{1,}.[0-9]{1,}.[0-9]{1,})-offline.exe</string>
         <key>SEARCH_PATTERN3</key>
-        <string>src=(.*pidgin-[0-9]{1,}.[0-9]{1,}.[0-9]{1,}-offline.exe)</string>
+        <string>src="(.*pidgin-[0-9]{1,}.[0-9]{1,}.[0-9]{1,}-offline.exe)</string>
         <key>USER_AGENT</key>
         <string>Mozilla/5.0 (Windows NT 6.3; Win64, x64; Trident/7.0; rv:11.0) like Gecko</string>
     </dict>
@@ -61,7 +61,7 @@
                 <key>re_pattern</key>
                 <string>%SEARCH_PATTERN3%</string>
                 <key>result_output_var_name</key>
-                <string>match</string>
+                <string>downloadmatch</string>
             </dict>
         </dict>
         <dict>
@@ -69,14 +69,16 @@
             <string>URLDownloader</string>
             <key>Arguments</key>
             <dict>
+                <key>CURL_PATH</key>
+                <string>/usr/bin/curl</string>
                 <key>url</key>
-                <string>%match%</string>
+                <string>%downloadmatch%</string>
                  <key>request_headers</key>
                     <dict>
                             <key>user-agent</key>
                             <string>%USER_AGENT%</string>
                             <key>Referer</key>
-                            <string>https://www.fosshub.com/Pidgin.html</string>
+                            <string>https://www.fosshub.com%match%</string>
                     </dict>
             </dict>
         </dict>
