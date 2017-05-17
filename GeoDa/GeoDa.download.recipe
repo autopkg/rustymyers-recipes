@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads GeoDa for macOS</string>
+    <key>Identifier</key>
+    <string></string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>GeoDa</string>
+        <key>SEARCH_URL</key>
+        <string>http://geodacenter.github.io/download_mac.html</string>
+        <key>SEARCH_PATTERN</key>
+        <string>(https:\/\/.*GeoDa(?P&lt;version&gt;[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})-.*Installer.dmg)</string>
+        <key>bes_icon</key>
+        <string>http://bes.win.psu.edu:52311/ManualUploads/PSU/Icons/.png</string>
+        <key>OfferCategory</key>
+        <string></string>
+        <key>OfferDescriptionHTML</key>
+        <string></string>
+        <key>bes_ssa</key>
+        <string>True</string>
+        <key>bes_ssaaction</key>
+        <string>DefaultAction</string>
+        <key>USER_AGENT</key>
+        <string>Mozilla/5.0 (Windows NT 6.3; Win64, x64; Trident/7.0; rv:11.0) like Gecko</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.9</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%SEARCH_URL%</string>
+                <key>re_pattern</key>
+                <string>%SEARCH_PATTERN%</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%match%</string>
+                 <key>request_headers</key>
+                    <dict>
+                            <key>user-agent</key>
+                            <string>%USER_AGENT%</string>
+                    </dict>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+    </array>
+</dict>
+</plist>
