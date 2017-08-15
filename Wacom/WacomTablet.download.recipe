@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Wacom Tablet drivers for Windows.</string>
 	<key>Identifier</key>
-	<string>com.github.rustymyers.download.WacomBamboo-Win</string>
+	<string>com.github.rustymyers.download.WacomTablet-Win</string>
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_PATTERN</key>
