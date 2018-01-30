@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Wacom Tablet drivers for Windows.</string>
+	<string>Downloads the latest version of Wacom Tablet drivers for macOS.</string>
 	<key>Identifier</key>
 	<string>com.github.rustymyers.download.WacomTablet</string>
 	<key>Input</key>
@@ -13,7 +13,7 @@
 		<key>DOWNLOAD_URL</key>
 		<string>https://www.wacom.com/en-us/support/product-support/drivers</string>
 		<key>NAME</key>
-		<string>Wacom Bamboo Driver</string>
+		<string>Wacom Tablet</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
@@ -44,6 +44,21 @@
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/Install Wacom Tablet.pkg</string>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: Wacom Technology Corp. (EG27766DY7)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
 		</dict>
 	</array>
 </dict>
