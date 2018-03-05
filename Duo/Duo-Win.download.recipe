@@ -11,7 +11,7 @@
         <key>NAME</key>
         <string>Duo</string>
         <key>DOWNLOAD_URL</key>
-        <string>https://dl.duosecurity.com/duo-win-login-latest.exe</string>
+        <string>http://dl.duosecurity.com/DuoWinLogon_MSIs_Policies_and_Documentation-latest.zip</string>
         <key>USER_AGENT</key>
         <string>Mozilla/5.0 (Windows NT 10.0; Win64; x64)</string>
     </dict>
@@ -32,16 +32,20 @@
                         <string>%USER_AGENT%</string>
                 </dict>
                 <key>filename</key>
-                <string>%NAME%.exe</string>
+                <string>%NAME%.zip</string>
             </dict>
         </dict>
         <dict>
             <key>Processor</key>
-            <string>com.github.hansen-m.SharedProcessors/HachoirMetaDataProvider</string>
+            <string>Unarchiver</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>com.github.hansen-m.SharedProcessors/MSIVersionProvider</string>
             <key>Arguments</key>
             <dict>
-                <key>file_path</key>
-                <string>%pathname%</string>
+                <key>msi_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/DuoWindowsLogon64.msi</string>
             </dict>
         </dict>
         <dict>
