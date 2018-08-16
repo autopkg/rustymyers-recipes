@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Adobe's Creative Cloud Installer.</string>
+	<string>Downloads the latest version of Adobe's Creative Cloud Desktop Cloud Installer.</string>
 	<key>Identifier</key>
 	<string>com.github.rustymyers.download.AdobeCreativeCloudInstallerWin</string>
 	<key>Input</key>
