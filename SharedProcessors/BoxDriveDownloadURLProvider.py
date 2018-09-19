@@ -48,8 +48,8 @@ class BoxDriveDownloadURLProvider(Processor):
         },
         "version": {
                 "description": "The version reported from the json for requested download."
-            },
-        }
+            }
+        },
     }
 
     __doc__ = description
