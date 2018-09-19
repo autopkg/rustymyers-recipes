@@ -44,9 +44,12 @@ class BoxDriveDownloadURLProvider(Processor):
     }
     output_variables = {
         "url": {
-            "description":
-                "The url for the Box Drive download."
+            "description": "The url for the Box Drive download."
         },
+        "version": {
+                "description": "The version reported from the json for requested download."
+            },
+        }
     }
 
     __doc__ = description
@@ -75,12 +78,14 @@ class BoxDriveDownloadURLProvider(Processor):
             self.output("Checking json for: {0}, {1}, from {2}".format(os_type, release, update_url))
             
         try:
-            box_download_url = self.get_json(update_url)[os_type][release][url_type]
+            json_results = self.get_json(update_url)
+            box_download_url = json_results[os_type][release][url_type]
+            box_version = json_results[os_type][release][version]
         except:
             raise
                 
         self.env['url'] = box_download_url
-        
+        self.env['version'] = box_version
 
 if __name__ == '__main__':
     processor = BoxDriveDownloadURLProvider()

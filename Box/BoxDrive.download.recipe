@@ -32,6 +32,20 @@
                 <string>rollout-url</string>
             </dict>
         </dict>
+		<dict>
+	        <key>Processor</key>
+	        <string>URLDownloader</string>
+	        <key>Arguments</key>
+	        <dict>
+	            <key>url</key>
+	            <string>%url%</string>
+	            <key>request_headers</key>
+	            <dict>
+	                    <key>user-agent</key>
+	                    <string>%USER_AGENT%</string>
+	            </dict>
+	        </dict>		
+		</dict>
         <dict>
             <key>Processor</key>
             <string>EndOfCheckPhase</string>
