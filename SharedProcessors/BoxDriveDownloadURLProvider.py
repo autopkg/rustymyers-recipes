@@ -48,8 +48,7 @@ class BoxDriveDownloadURLProvider(Processor):
         },
         "version": {
                 "description": "The version reported from the json for requested download."
-            }
-        },
+        }
     }
 
     __doc__ = description
@@ -80,7 +79,7 @@ class BoxDriveDownloadURLProvider(Processor):
         try:
             json_results = self.get_json(update_url)
             box_download_url = json_results[os_type][release][url_type]
-            box_version = json_results[os_type][release][version]
+            box_version = json_results[os_type][release]["version"]
         except:
             raise
                 
