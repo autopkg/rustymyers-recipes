@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest version of Box Notes.</string>
+    <string>Downloads the latest version of Box Drive.</string>
     <key>Identifier</key>
     <string>com.github.rustymyers.download.boxdrive</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>BoxNotes</string>
+        <string>Box Drive</string>
         <key>JSON_URL</key>
         <string>https://cdn07.boxcdn.net/Autoupdate.json</string>
         <key>USER_AGENT</key>
@@ -18,80 +18,24 @@
     <key>MinimumVersion</key>
     <string>0.4.0</string>
     <key>Process</key>
-    <array>
-        <dict>
+    <array>        
+		<dict>
             <key>Processor</key>
-            <string>URLTextSearcher</string>
+            <string>com.github.rustymyers.SharedProcessors/BoxDriveDownloadURLProvider</string>
             <key>Arguments</key>
             <dict>
-                <key>url</key>
-                <string>%JSON_URL%</string>
-                <key>re_pattern</key>
-                <string>mac.*enterprise": {"version": "(?P&lt;version&gt;[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,3})", "download-url": "(?P&lt;DOWNLOAD_URL&gt;https://.[a-z,0-9,A-Z,/,.]{1,})</string>
+                <key>os_type</key>
+                <string>mac</string>
+                <key>release</key>
+                <string>enterprise</string>
+                <key>url_type</key>
+                <string>rollout-url</string>
             </dict>
         </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLDownloader</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>%DOWNLOAD_URL%</string>
-                <key>request_headers</key>
-                <dict>
-                        <key>user-agent</key>
-                        <string>%USER_AGENT%</string>
-                </dict>
-                <key>filename</key>
-                <string>%NAME%.pkg</string>
-            </dict>
-        </dict>
-        <!-- <dict>
-            <key>Arguments</key>
-            <dict>
-                <key>flat_pkg_path</key>
-                <string>%pathname%</string>
-                <key>destination_path</key>
-                <string>%RECIPE_CACHE_DIR%/BOXDRIVE/</string>
-            </dict>
-            <key>Processor</key>
-            <string>FlatPkgUnpacker</string>
-        </dict>
-        <dict>
-            <key>Arguments</key>
-            <dict>
-                <key>pkg_payload_path</key>
-                <string>%RECIPE_CACHE_DIR%/BOXDRIVE/BoxDesktopDrive.pkg/Payload</string>
-                <key>extract_root</key>
-                <string>%RECIPE_CACHE_DIR%/BOXDRIVE/</string>
-            </dict>
-            <key>Processor</key>
-            <string>PkgPayloadUnpacker</string>
-        </dict>
-        <dict>
-            <key>Arguments</key>
-            <dict>
-                <key>input_plist_path</key>
-                <string>%RECIPE_CACHE_DIR%/BOXDRIVE/Box.app/Contents/Info.plist</string>
-            </dict>
-            <key>Processor</key>
-            <string>Versioner</string>
-        </dict> -->
         <dict>
             <key>Processor</key>
             <string>EndOfCheckPhase</string>
         </dict>
-        <!-- <dict>
-            <key>Arguments</key>
-            <dict>
-                <key>path_list</key>
-				<array>
-				    <string>%RECIPE_CACHE_DIR%/BOXDRIVE</string>
-				</array>
-            </dict>
-            <key>Processor</key>
-            <string>PathDeleter</string>
-        </dict> -->
     </array>
 </dict>
 </plist>
