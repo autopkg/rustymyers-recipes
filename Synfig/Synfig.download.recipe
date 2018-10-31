@@ -25,24 +25,13 @@
     <array>
         <dict>
             <key>Processor</key>
-            <string>URLTextSearcher</string>
+            <string>com.github.rustymyers.SharedProcessors/FossHubURLProvider</string>
             <key>Arguments</key>
             <dict>
-                <key>url</key>
-                <string>http://www.fosshub.com/Synfig.html</string>
-                <key>re_pattern</key>
-                <string>%SEARCH_PATTERN%</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>http://www.fosshub.com/Synfig.html/%match%.dmg</string>
-                <key>re_pattern</key>
-                <string>%SEARCH_PATTERN2%</string>
+                <key>app_name</key>
+                <string>Synfig</string>
+                <key>app_type</key>
+                <string>OS X Binary</string>
             </dict>
         </dict>
         <dict>
@@ -51,7 +40,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>%match%</string>
+                <string>%url%</string>
                  <key>request_headers</key>
                     <dict>
                             <key>user-agent</key>

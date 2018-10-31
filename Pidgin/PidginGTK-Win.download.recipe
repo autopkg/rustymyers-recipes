@@ -36,45 +36,6 @@
                 <string>Windows Installer (with GTK)</string>
             </dict>
         </dict>
-        <!-- <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>https://www.fosshub.com/Pidgin.html</string>
-                <key>re_pattern</key>
-                <string>%SEARCH_PATTERN2%</string>
-                <key>result_output_var_name</key>
-                <string>version</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>https://www.fosshub.com/Pidgin.html</string>
-                <key>re_pattern</key>
-                <string>%SEARCH_PATTERN%</string>
-                <key>result_output_var_name</key>
-                <string>match</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>https://www.fosshub.com%match%</string>
-                <key>re_pattern</key>
-                <string>%SEARCH_PATTERN3%</string>
-                <key>result_output_var_name</key>
-                <string>downloadmatch</string>
-            </dict>
-        </dict> -->
         <dict>
             <key>Processor</key>
             <string>URLDownloader</string>
