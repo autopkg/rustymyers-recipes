@@ -27,6 +27,17 @@
     <array>
         <dict>
             <key>Processor</key>
+            <string>com.github.rustymyers.SharedProcessors/FossHubURLProvider</string>
+            <key>Arguments</key>
+            <dict>
+                <key>app_name</key>
+                <string>Pidgin</string>
+                <key>app_type</key>
+                <string>Windows Installer (with GTK)</string>
+            </dict>
+        </dict>
+        <!-- <dict>
+            <key>Processor</key>
             <string>URLTextSearcher</string>
             <key>Arguments</key>
             <dict>
@@ -63,7 +74,7 @@
                 <key>result_output_var_name</key>
                 <string>downloadmatch</string>
             </dict>
-        </dict>
+        </dict> -->
         <dict>
             <key>Processor</key>
             <string>URLDownloader</string>
@@ -72,13 +83,11 @@
                 <key>CURL_PATH</key>
                 <string>/usr/bin/curl</string>
                 <key>url</key>
-                <string>%downloadmatch%</string>
+                <string>%url%</string>
                  <key>request_headers</key>
                     <dict>
                             <key>user-agent</key>
                             <string>%USER_AGENT%</string>
-                            <key>Referer</key>
-                            <string>https://www.fosshub.com%match%</string>
                     </dict>
             </dict>
         </dict>
