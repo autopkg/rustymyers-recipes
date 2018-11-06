@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Solstice for USB and creates a package.</string>
+	<key>Identifier</key>
+	<string>com.github.rustymyers.pkg.SolsticeUSB</string>
+	<key>Input</key>
+	<dict>
+		<key>APP_FILENAME</key>
+		<string>SolsticeClientMacWeb</string>
+		<key>BUNDLE_ID</key>
+		<string>com.mersive.solstice.client</string>
+		<key>NAME</key>
+		<string>Solstice</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.rustymyers.download.SolsticeUSB</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>app_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Solstice Client.app</string>
+			</dict>
+			<key>Processor</key>
+			<string>AppPkgCreator</string>
+		</dict>
+	</array>
+</dict>
+</plist>
