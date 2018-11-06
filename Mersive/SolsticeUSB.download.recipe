@@ -22,7 +22,7 @@
 	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
-        <dict>
+        <!-- <dict>
             <key>Arguments</key>
             <dict>
                 <key>path_list</key>
@@ -30,7 +30,7 @@
             </dict>
             <key>Processor</key>
             <string>PathDeleter</string>
-        </dict>
+        </dict> -->
 		<dict>
 			<key>Arguments</key>
 			<dict>
@@ -60,6 +60,8 @@
             <dict>
                 <key>archive_format</key>
                 <string>tar_gzip</string>
+                <key>purge_destination</key>
+                <true/>
             </dict>
         </dict>
         <dict>
