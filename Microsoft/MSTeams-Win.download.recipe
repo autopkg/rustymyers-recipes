@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads the latest version of Microsoft Teams dmg from Microsoft. Environment can be defined (although production seems to be the only available), as can platform (defaults to osx).</string>
     <key>Identifier</key>
-    <string>com.github.apettinen.download.MSTeams</string>
+    <string>com.github.rustymyers.download.MSTeams-Win</string>
     <key>MinimumVersion</key>
     <string>0.6.0</string>
     <key>Input</key>
