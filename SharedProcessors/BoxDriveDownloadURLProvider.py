@@ -76,17 +76,24 @@ class BoxDriveDownloadURLProvider(Processor):
         if verbosity > 1:
             self.output("Checking json for: {0}, {1}, {2} from {3}".format(os_type, release, url_type, update_url))
             
+        json_results = self.get_json(update_url)
         try:
-            json_results = self.get_json(update_url)
             box_download_url = json_results[os_type][release][url_type]
+        except:
+            self.output("Failed to get %s, checking for download-url" % url_type)
+            box_download_url = json_results[os_type][release]['download-url']
+        
+        try:
             # Get the version associated with the download type
             if "rollout" in url_type:
                 box_version = json_results[os_type][release]["rollout-version"]
             else:
                 box_version = json_results[os_type][release]["version"]
         except:
-            raise
-                
+             self.output("Failed to find version of download")
+             raise
+            
+
         self.env['url'] = box_download_url
         self.env['version'] = box_version
 
