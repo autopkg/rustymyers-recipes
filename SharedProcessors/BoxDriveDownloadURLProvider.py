@@ -90,8 +90,7 @@ class BoxDriveDownloadURLProvider(Processor):
             else:
                 box_version = json_results[os_type][release]["version"]
         except:
-             self.output("Failed to find version of download")
-             raise
+            box_version = json_results[os_type][release]["version"]
             
 
         self.env['url'] = box_download_url
