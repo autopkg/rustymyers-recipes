@@ -3,16 +3,16 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads latest Fuze.app.</string>
+    <string>Downloads latest Fuze.app</string>
     <key>Identifier</key>
-    <string>com.github.rustymyers.Fuze.download</string>
+    <string>com.github.rustymyers.download.Fuze</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
         <string>Fuze</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.0</string>
+    <string>1.0.0</string>
     <key>Process</key>
     <array>
         <dict>
@@ -21,12 +21,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>https://api.fuzemeeting.com/v1/launch/mac_download?host=1&amp;deviceId=35947382</string>
-                <key>request_headers</key>
-                <dict>
-                        <key>user-agent</key>
-                        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.28.10 (KHTML, like Gecko) Version/6.0.3 Safari/536.28.10</string>
-                </dict>
+                <string>https://api.fuzemeeting.com/v1/launch/mac_download</string>
                 <key>filename</key>
                 <string>%NAME%.zip</string>
             </dict>
@@ -43,7 +38,7 @@
                 <key>input_path</key>
                 <string>%RECIPE_CACHE_DIR%/%NAME%/Fuze*.app</string>
                 <key>requirement</key>
-                <string>anchor apple generic and identifier "com.fuzebox.fuze.FuzeLauncher" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = GL3N2JA5UH)</string>
+                <string>anchor apple generic and identifier "com.fuzebox.fuze.FuzeLauncher" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Z94XCC8A5K)</string>
             </dict>
         </dict>
         <dict>
