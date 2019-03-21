@@ -5,14 +5,14 @@
     <key>Description</key>
     <string>Downloads latest Fuze.app</string>
     <key>Identifier</key>
-    <string>com.github.rustymyers.Fuze.download</string>
+    <string>com.github.rustymyers.download.Fuze</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
         <string>Fuze</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.0</string>
+    <string>1.0.0</string>
     <key>Process</key>
     <array>
         <dict>
