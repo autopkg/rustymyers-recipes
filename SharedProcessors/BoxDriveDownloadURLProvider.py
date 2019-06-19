@@ -59,7 +59,7 @@ class BoxDriveDownloadURLProvider(Processor):
 			raw_json = f.read()
 			f.close()
 		except:
-			raise ProcessorError('Could not retrieve project name URL for "%s"' % pname)
+			raise ProcessorError('Could not retrieve project name URL for "%s"' % url)
 
 		return json.loads(raw_json)
         
