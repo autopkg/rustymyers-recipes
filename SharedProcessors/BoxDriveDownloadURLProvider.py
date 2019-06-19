@@ -11,7 +11,6 @@ import os
 import sys
 import subprocess
 import re
-import urllib2
 import json
 
 from autopkglib import Processor, ProcessorError
@@ -41,6 +40,11 @@ class BoxDriveDownloadURLProvider(Processor):
             "required": False,
             "description": "URL type to check for: rollout-url, download-url. Defaults to download-url",
         },
+            "CURL_PATH": {
+            "required": False,
+            "default": "/usr/bin/curl",
+            "description": "Path to curl binary. Defaults to /usr/bin/curl.",
+        },
     }
     output_variables = {
         "url": {
@@ -59,10 +63,28 @@ class BoxDriveDownloadURLProvider(Processor):
 			raw_json = f.read()
 			f.close()
 		except:
-			raise ProcessorError('Could not retrieve project name URL for "%s"' % url)
+			raise ProcessorError('Could not retrieve URL: "%s"' % url)
 
 		return json.loads(raw_json)
         
+    def fetch_content(self, url, headers=None):
+        """Returns content retrieved by curl, given a url and an optional
+        dictionary of header-name/value mappings. Logic here borrowed from
+        URLTextSearcher processor."""
+        try:
+            cmd = [self.env["CURL_PATH"], "--location", "--compressed"]
+            if headers:
+                for header, value in headers.items():
+                    cmd.extend(["--header", "%s: %s" % (header, value)])
+            cmd.append(url)
+            proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            (data, stderr) = proc.communicate()
+            if proc.returncode:
+                raise ProcessorError("Could not retrieve URL %s: %s" % (url, stderr))
+        except OSError:
+            raise ProcessorError("Could not retrieve URL: %s" % url)
+
+        return json.loads(data)
 
     def main(self):
 
@@ -76,13 +98,15 @@ class BoxDriveDownloadURLProvider(Processor):
         if verbosity > 1:
             self.output("Checking json for: {0}, {1}, {2} from {3}".format(os_type, release, url_type, update_url))
             
-        json_results = self.get_json(update_url)
+        json_results = self.fetch_content(update_url)
+
         try:
             box_download_url = json_results[os_type][release][url_type]
         except:
             self.output("Failed to get %s, checking for download-url" % url_type)
             box_download_url = json_results[os_type][release]['download-url']
         
+        print box_download_url
         try:
             # Get the version associated with the download type
             if "rollout" in url_type:
