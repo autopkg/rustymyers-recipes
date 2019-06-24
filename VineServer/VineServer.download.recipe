@@ -49,7 +49,7 @@
                 <key>plist_version_key</key>
                 <string>CFBundleShortVersionString</string>
                 <key>input_plist_path</key>
-                <string>%pathname%/%NAME%.app/Contents/Info.plist</string>
+                <string>%pathname%/Vine Server.app/Contents/Info.plist</string>
             </dict>
         </dict>
 		<dict>
