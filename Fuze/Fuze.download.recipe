@@ -23,8 +23,12 @@
                 <key>url</key>
                 <string>https://api.fuzemeeting.com/v1/launch/mac_download</string>
                 <key>filename</key>
-                <string>%NAME%.zip</string>
+                <string>Fuze.zip</string>
             </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
         </dict>
         <dict>
             <key>Processor</key>
@@ -40,10 +44,6 @@
                 <key>requirement</key>
                 <string>anchor apple generic and identifier "com.fuzebox.fuze.FuzeLauncher" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Z94XCC8A5K)</string>
             </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>EndOfCheckPhase</string>
         </dict>
     </array>
 </dict>
