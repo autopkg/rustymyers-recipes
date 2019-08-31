@@ -5,6 +5,8 @@
 # Updated by Rusty Myers (rzm102@psu.edu)
 
 
+from __future__ import absolute_import
+from __future__ import print_function
 import os
 import sys
 import subprocess
@@ -74,7 +76,7 @@ class FossHubURLProvider(Processor):
                 file_types.append(projectfile['type'])
         myset = set(file_types)
         for filetype in list(myset):
-            print filetype
+            print(filetype)
         
             
     def main(self):

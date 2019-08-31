@@ -16,6 +16,7 @@
 # limitations under the License.
 """See docstring for MSTeamsURLProvider class"""
 #import re
+from __future__ import absolute_import
 import urllib2
 
 from autopkglib import Processor, ProcessorError

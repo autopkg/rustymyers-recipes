@@ -7,6 +7,8 @@
 # Based on WinInstallerExtractor
 
 
+from __future__ import absolute_import
+from __future__ import print_function
 import os
 import sys
 import subprocess
@@ -106,7 +108,7 @@ class BoxDriveDownloadURLProvider(Processor):
             self.output("Failed to get %s, checking for download-url" % url_type)
             box_download_url = json_results[os_type][release]['download-url']
         
-        print box_download_url
+        print(box_download_url)
         try:
             # Get the version associated with the download type
             if "rollout" in url_type:
