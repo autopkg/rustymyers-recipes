@@ -17,9 +17,13 @@
 """See docstring for MSTeamsURLProvider class"""
 #import re
 from __future__ import absolute_import
-import urllib2
 
 from autopkglib import Processor, ProcessorError
+
+try:
+    from urllib.parse import urlopen  # For Python 3
+except ImportError:
+    from urllib2 import urlopen  # For Python 2
 
 __all__ = ["MSTeamsURLProvider"]
 
@@ -58,7 +62,7 @@ class MSTeamsURLProvider(Processor):
     def get_msteams_pkg_url(self, fetch_url):
         """Finds a download URL for latest MSTeams release"""
         try:
-            fref = urllib2.urlopen(fetch_url)
+            fref = urlopen(fetch_url)
             dl_url = fref.read()
             fref.close()
         except BaseException as err:

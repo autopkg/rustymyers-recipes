@@ -10,9 +10,13 @@
 from __future__ import absolute_import
 import json
 import subprocess
-import urllib2
 
 from autopkglib import Processor, ProcessorError
+
+try:
+    from urllib.parse import urlopen  # For Python 3
+except ImportError:
+    from urllib2 import urlopen  # For Python 2
 
 __all__ = ["BoxDriveDownloadURLProvider"]
 
@@ -57,7 +61,7 @@ class BoxDriveDownloadURLProvider(Processor):
 
     def get_json(self, url):
         try:
-            f = urllib2.urlopen(url)
+            f = urlopen(url)
             raw_json = f.read()
             f.close()
         except:
