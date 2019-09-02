@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 
 from __future__ import absolute_import
+
 import datetime
-import re
-from xml.dom.minidom import parse, parseString
-import urllib2
 import json
+import re
+import urllib2
+from xml.dom.minidom import parse, parseString
 
 from autopkglib import Processor, ProcessorError
 
