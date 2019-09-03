@@ -65,7 +65,7 @@ class MSTeamsURLProvider(Processor):
             fref = urlopen(fetch_url)
             dl_url = fref.read()
             fref.close()
-        except BaseException as err:
+        except Exception as err:
             raise ProcessorError("Could not retrieve %s: %s" %(fetch_url, err))
         # if the URL is empty, raise error
         if not dl_url:
