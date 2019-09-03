@@ -4,28 +4,24 @@
 #
 # Updated by Rusty Myers (rzm102@psu.edu)
 
+from __future__ import absolute_import, print_function
 
-import os
-import sys
-import subprocess
-import re
-import urllib2
 import json
+import urllib2
 
 from autopkglib import Processor, ProcessorError
-
 
 __all__ = ["FossHubURLProvider"]
 
 
 class FossHubURLProvider(Processor):
     '''Provides download URL for specific fosshub installer from projects json'''
-    
+
     description = "Provides download URL for Box Drive."
     input_variables = {
         'projects_url': {
             "required": False,
-            "description": "URL for Fosshub projects json",            
+            "description": "URL for Fosshub projects json",
         },
         'app_name': {
             "required": True,
@@ -59,13 +55,13 @@ class FossHubURLProvider(Processor):
         try:
             f = urllib2.urlopen(request)
             raw_json = f.read()
-            # print raw_json
+            # print(raw_json)
             f.close()
         except:
             raise ProcessorError('Could not retrieve projects URL "%s"' % url)
 
         return json.loads(raw_json)
-        
+
     def unique_types(self,json):
         file_types=[]
         # Return list of unique file types
@@ -74,19 +70,19 @@ class FossHubURLProvider(Processor):
                 file_types.append(projectfile['type'])
         myset = set(file_types)
         for filetype in list(myset):
-            print filetype
-        
-            
+            print(filetype)
+
+
     def main(self):
         projects_url = self.env.get('projects_url', "https://university.fosshub.com/projects.json")
         app_name = self.env.get('app_name')
         app_type = self.env.get('app_type', "macOS DMG")
         verbosity = self.env.get('verbose', 0)
-        
-        
+
+
         if verbosity > 1:
             self.output("Checking json for: '{0}' & '{1}' from {2}".format(app_name, app_type, projects_url))
-            
+
         try:
             json_results = self.get_json(projects_url)
         except:
@@ -105,16 +101,16 @@ class FossHubURLProvider(Processor):
         for project in json_results['projects']:
             # If we find a project that matches
             if project['name'] == app_name:
-                # print project['name']
-                # print project
+                # print(project['name'])
+                # print(project)
                 # Check each file in the matched project
                 for projectfile in project['files']:
-                    # print projectfile
-                    # print projectfile['name']
-                    # print projectfile['downloadUrl']
-                    # print projectfile['version']
-                    # print projectfile['hashes']
-                    # print projectfile['type']
+                    # print(projectfile)
+                    # print(projectfile['name'])
+                    # print(projectfile['downloadUrl'])
+                    # print(projectfile['version'])
+                    # print(projectfile['hashes'])
+                    # print(projectfile['type'])
                     # If we match the app type in the project file
                     if projectfile['type'] == app_type:
                         # Return match if found
