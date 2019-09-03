@@ -24,7 +24,7 @@
 				<string>keepass</string>
 			</dict>
 			<key>Processor</key>
-			<string>com.github.rustymyers.SharedProcessors/SourceForgeURLProvider</string>
+			<string>com.github.jessepeterson.munki.GrandPerspective/SourceForgeURLProvider</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -42,4 +42,3 @@
 	</array>
 </dict>
 </plist>
-
