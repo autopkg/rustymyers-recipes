@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads the latest version of Box Drive for Windows.</string>
     <key>Identifier</key>
-    <string>com.github.rustymyers.download.boxdrivewin</string>
+    <string>com.github.rustymyers.download.boxdrive-win</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
