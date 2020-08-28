@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>DOWNLOAD_PATTERN</key>
-        <string>(http:\/\/(?P&lt;url&gt;cdn\.wacom\.com\/u\/productsupport\/drivers\/mac\/professional\/WacomTablet_+(?P&lt;version&gt;[\d.-]+)\.dmg))</string>
+        <string>(https:\/\/(?P&lt;url&gt;cdn-row\.wacom\.com\/u\/productsupport\/drivers\/mac\/professional\/WacomTablet_+(?P&lt;version&gt;[\d.-]+)\.dmg))</string>
         <key>DOWNLOAD_URL</key>
         <string>https://www.wacom.com/en-us/support/product-support/drivers</string>
         <key>NAME</key>
