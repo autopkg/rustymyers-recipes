@@ -21,7 +21,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://secondlife.com/support/downloads/</string>
+                <string>https://secondlife.com/support/downloads/</string>
                 <key>re_pattern</key>
                 <string>a href=.?(?P&lt;url&gt;http.*?Second_Life.*?\.dmg)</string>
             </dict>
