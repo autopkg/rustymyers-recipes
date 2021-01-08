@@ -19,7 +19,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://www.shinywhitebox.com/store/changelog.php?p=1</string>
+                <string>https://www.shinywhitebox.com/store/changelog.php?p=1</string>
                 <key>re_pattern</key>
                 <string>(?P&lt;dmg&gt;http://www.shinywhitebox.com/downloads/iShowU_(?P&lt;version&gt;[0-9.]+)\.dmg)</string>
             </dict>
