@@ -32,7 +32,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%.exe</string>
+				<string>%NAME%-%version%.exe</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
