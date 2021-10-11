@@ -1,0 +1,19 @@
+Description: Git 64 but exe installer for Windows from Github
+Identifier: com.github.rustymyers.download.Git-Win64
+Input:
+  NAME: Git
+  BUILD: "64"
+MinimumVersion: '2.3'
+
+Process:
+  - Processor: GitHubReleasesInfoProvider
+    Arguments:
+      github_repo: git-for-windows/git
+      asset_regex: 'Git-(?P<version_exe>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})-%BUILD%-bit.exe'
+  - Processor: URLTextSearcher
+    Arguments:
+      url: https://github.com/git-for-windows/git/releases/tag/v%version%
+      re_pattern: 'Git-(?P<version_exe>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})-%BUILD%-bit.exe'
+  - Processor: URLDownloader
+    Arguments:
+      filename: "%NAME%-%version_exe%.exe"
