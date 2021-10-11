@@ -13,7 +13,7 @@ Process:
   - Processor: URLTextSearcher
     Arguments:
       url: https://github.com/git-for-windows/git/releases/tag/v%version%
-      re_pattern: 'Git-(?P<version_exe>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})-%BUILD%-bit.exe'
+      re_pattern: 'Git-(?P<version_exe>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}).[0-9]{1,3}-%BUILD%-bit.exe'
   - Processor: URLDownloader
     Arguments:
       filename: "%NAME%-%version_exe%.exe"
