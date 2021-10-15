@@ -23,7 +23,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>app_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Mersive Solstice.app</string>
+				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg/Mersive Solstice.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
