@@ -22,6 +22,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>Bamboo downloads no longer availiable from Wacom. See WacomTablet-Win.download.recipe WacomIntuos-Win.download.recipe</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>re_pattern</key>
 				<string>%DOWNLOAD_PATTERN%</string>
 				<key>url</key>
