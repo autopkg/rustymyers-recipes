@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Download recipe for Tenable Nessus Red Hat ES 8 (64-bit) / CentOS 8 / Oracle Linux 8 (including Unbreakable Enterprise Kernel).</string>
         <key>Identifier</key>
-        <string>com.github.rustymyers.autopkg.download.Nessus-RedHat64</string>
+        <string>com.github.rustymyers.autopkg.download.Nessus-RedHat8</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
