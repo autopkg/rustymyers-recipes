@@ -3,7 +3,7 @@
 <plist version="1.0">
     <dict>
         <key>Description</key>
-        <string>Download recipe for Tenable Nessus.</string>
+        <string>Download recipe for Tenable Nessus Windows Server 2008 SP2, Server 2008 R2 SP1, Server 2012, Server 2012 R2, Server 2016, Server 2019, 7, 8.1, and 10 (64-bit).</string>
         <key>Identifier</key>
         <string>com.github.rustymyers.autopkg.download.Nessus-Win</string>
         <key>Input</key>

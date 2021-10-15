@@ -3,9 +3,9 @@
 <plist version="1.0">
     <dict>
         <key>Description</key>
-        <string>Download recipe for Tenable Nessus Ubuntu 14.04, 16.04, 18.04, 20.04 AMD64.</string>
+        <string>Download recipe for Tenable Nessus Red Hat ES 8 (64-bit) / CentOS 8 / Oracle Linux 8 (including Unbreakable Enterprise Kernel).</string>
         <key>Identifier</key>
-        <string>com.github.rustymyers.autopkg.download.Nessus-Ubuntu</string>
+        <string>com.github.rustymyers.autopkg.download.Nessus-RedHat64</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>
@@ -25,7 +25,7 @@
                   <key>result_output_var_name</key>
                   <string>download_id</string>
                   <key>re_pattern</key>
-                  <string>"id":([\d]*)(?=,"file":"NessusAgent-[\d\.]*.{1,4}-ubuntu[0-9]{1,4}_amd64.deb)</string>
+                  <string>"id":([\d]*)(?=,"file":"NessusAgent-[\d\.]*-es[0-9]{1,4}.x86_64.rpm)</string>
               </dict>
             </dict>
            <dict>
@@ -38,7 +38,7 @@
                   <key>result_output_var_name</key>
                   <string>version</string>
                   <key>re_pattern</key>
-                  <string>NessusAgent-([\d\.]*).ubuntu[0-9]{1,5}_amd64.deb</string>
+                  <string>NessusAgent-([\d\.]*)*-es[0-9]{1,4}.x86_64.rpm</string>
               </dict>
             </dict>
             <dict>
@@ -51,7 +51,7 @@
                     <key>CHECK_FILESIZE_ONLY</key>
                     <true />
                     <key>filename</key>
-                    <string>%NAME%-%version%-Ubuntu64.deb</string>
+                    <string>%NAME%-%version%-RedHat64.deb</string>
                 </dict>
             </dict>
             <dict>
