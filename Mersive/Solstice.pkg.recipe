@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Solstice for USB and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.github.rustymyers.pkg.SolsticeUSB</string>
+	<string>com.github.rustymyers.pkg.Solstice</string>
 	<key>Input</key>
 	<dict>
 		<key>APP_FILENAME</key>
@@ -16,14 +16,14 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.rustymyers.download.SolsticeUSB</string>
+	<string>com.github.joshua-d-miller.download.solsticeclient</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>app_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Solstice Client.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Mersive Solstice.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
