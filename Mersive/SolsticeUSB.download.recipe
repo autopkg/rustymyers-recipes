@@ -23,15 +23,15 @@
 	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
-        <!-- <dict>
-            <key>Arguments</key>
-            <dict>
-                <key>path_list</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/</string>
-            </dict>
-            <key>Processor</key>
-            <string>PathDeleter</string>
-        </dict> -->
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>Solstice no longer has USB version. Use main download from com.github.joshua-d-miller.download.solsticeclient</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
