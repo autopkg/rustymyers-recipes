@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of GitHub Desktop.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.download.GitHubDesktop</string>
+	<string>com.github.rustymyers.download.GitHubDesktop-Win</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
