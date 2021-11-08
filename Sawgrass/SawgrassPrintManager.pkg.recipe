@@ -54,6 +54,18 @@
                 <string>%RECIPE_CACHE_DIR%/%NAME%Payload/Applications/Sawgrass Print Manager.app/Contents/Info.plist</string>
             </dict>
         </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>path_list</key>
+                <array>
+                    <string>%RECIPE_CACHE_DIR%/%NAME%</string>
+                    <string>%RECIPE_CACHE_DIR%/%NAME%Payload</string>
+                </array>
+            </dict>
+            <key>Processor</key>
+            <string>PathDeleter</string>
+        </dict>
     </array>
 </dict>
 </plist>
