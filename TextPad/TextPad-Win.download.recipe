@@ -11,9 +11,10 @@
         <key>NAME</key>
         <string>TextPad</string>
         <key>SEARCH_URL</key>
-        <string>https://www.textpad.com/download/index.html</string>
+        <string>https://www.textpad.com/download</string>
         <key>SEARCH_PATTERN</key>
-        <string>(\/download.*\/txpeng.*64.zip)</string>
+        <!--https://www.textpad.com/file?path=v89/x64/txpeng890-64.zip -->
+        <string>\/file\?path\=v[0-9]{1,4}\/x64\/txpeng[0-9]{3,4}-64.zip</string>
         <key>USER_AGENT</key>
         <string>Mozilla/4.0</string>
     </dict>
@@ -43,7 +44,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>https://www.textpad.com/%match%</string>
+                <string>https://www.textpad.com%match%</string>
                 <key>request_headers</key>
                     <dict>
                             <key>user-agent</key>
