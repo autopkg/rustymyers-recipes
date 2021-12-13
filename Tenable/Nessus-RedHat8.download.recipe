@@ -51,7 +51,7 @@
                     <key>CHECK_FILESIZE_ONLY</key>
                     <true />
                     <key>filename</key>
-                    <string>%NAME%-%version%-RedHat64.deb</string>
+                    <string>%NAME%-%version%-RedHat64.rpm</string>
                 </dict>
             </dict>
             <dict>
