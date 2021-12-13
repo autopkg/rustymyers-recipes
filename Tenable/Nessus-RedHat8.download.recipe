@@ -34,11 +34,11 @@
               <key>Arguments</key>
               <dict>
                   <key>url</key>
-                  <string>https://www.tenable.com/downloads/nessus-agents</string>
+                  <string>https://www.tenable.com/downloads/nessus-agents?loginAttempted=true</string>
                   <key>result_output_var_name</key>
                   <string>version</string>
                   <key>re_pattern</key>
-                  <string>NessusAgent-([\d\.]*)*-es[0-9]{1,4}.x86_64.rpm</string>
+                  <string>NessusAgent-([0-9]{1,4}.{1,4}.[0-9]{1,4})-es[0-9]{1,4}.x86_64.rpm</string>
               </dict>
             </dict>
             <dict>
