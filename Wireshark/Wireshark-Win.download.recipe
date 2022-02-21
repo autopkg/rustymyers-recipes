@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Wireshark.</string> 
+	<key>Identifier</key>
+	<string>com.github.rustymyers.download.Wireshark-Win</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Wireshark</string>
+	</dict>
+	<key>Process</key>
+	<array>
+        <dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>https://www.wireshark.org/download.html</string>
+                <key>re_pattern</key>
+                <string>href="https:\/\/[^"]*(?P&lt;match&gt;win64/Wireshark-win64.*\.exe)"</string>
+                <key>re_flags</key>
+                <array>
+                    <string>IGNORECASE</string>
+                </array>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>https://www.wireshark.org/download/%match%</string>
+                <key>filename</key>
+                <string>%NAME%.exe</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>com.github.hansen-m.SharedProcessors/WinInstallerExtractor</string>
+            <key>Arguments</key>
+            <dict>
+                <key>exe_path</key>
+                <string>%pathname%</string>
+                <key>preserve_paths</key>
+                <string>False</string>
+                <key>extract_dir</key>
+                <string>ExeExtract</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>PathDeleter</string>
+            <key>Arguments</key>
+            <dict>
+                <key>path_list</key>
+                <array>
+                    <string>%RECIPE_CACHE_DIR%/ExeExtract</string>
+                </array>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
