@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the latest version of LoginLog from twocanoes BitBucket.</string>
+    <key>Identifier</key>
+    <string>com.github.rustymyers.download.LoginLog</string>
+    <key>Input</key>
+    <dict>
+        <key>APP_FILENAME</key>
+        <string>LoginLog</string>
+        <key>DOWNLOAD_URL</key>
+        <string>https://bitbucket.org/twocanoes/loginlog/downloads/</string>
+        <key>NAME</key>
+        <string>LoginLog</string>
+        <key>DOWNLOAD_PATTERN</key>
+        <string>(\/twocanoes\/loginlog\/downloads\/PreBeta-LoginLog_Build-[0-9]{4}_Version-([0-9]{0,5}.{0,3}).dmg)</string>
+        <!-- https://bitbucket.org/twocanoes/loginlog/downloads/PreBeta-LoginLog_Build-2008_Version-2.2.dmg -->
+    </dict>
+    <key>MinimumVersion</key>
+    <string>1.0.0</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>re_pattern</key>
+                <string>%DOWNLOAD_PATTERN%</string>
+                <key>url</key>
+                <string>%DOWNLOAD_URL%</string>
+            </dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>filename</key>
+                <string>%NAME%.dmg</string>
+                <key>url</key>
+                <string>https://bitbucket.org%match%</string>
+            </dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>input_plist_path</key>
+                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg/LoginLog.app/Contents/Info.plist</string>
+                <key>plist_version_key</key>
+                <string>CFBundleShortVersionString</string>
+            </dict>
+            <key>Processor</key>
+            <string>Versioner</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+    </array>
+</dict>
+</plist>
