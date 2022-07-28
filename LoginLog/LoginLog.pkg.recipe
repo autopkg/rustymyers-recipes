@@ -17,7 +17,7 @@
     <string>com.github.rustymyers.download.LoginLog</string>
     <key>Process</key>
     <array>
-        <dict>
+        <!-- <dict>
             <key>Arguments</key>
             <dict>
                 <key>app_path</key>
@@ -25,12 +25,78 @@
             </dict>
             <key>Processor</key>
             <string>AppPkgCreator</string>
+        </dict> -->
+        <dict>
+            <key>Processor</key>
+            <string>PkgRootCreator</string>
+            <key>Arguments</key>
+            <dict>
+                <key>pkgroot</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%</string>
+                <key>pkgdirs</key>
+                <dict>
+                    <key>Library</key>
+                    <string>0755</string>
+                    <key>Library/PrivilegedHelperTools</key>
+                    <string>0755</string>
+                </dict>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>Copier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>source_path</key>
+                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg/*%NAME%.app</string>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/Library/PrivilegedHelperTools/*%NAME%.app</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>PkgCreator</string>
+            <key>Arguments</key>
+            <dict>
+                <key>pkgname</key>
+                <string>%NAME%-%version%</string>
+                <key>version</key>
+                <string>%version%</string>
+                <key>pkg_request</key>
+                <dict>
+                    <key>pkgdir</key>
+                    <string>%RECIPE_CACHE_DIR%/</string>
+                    <key>id</key>
+                    <string>com.github.rustymyers.LoginLog.pkg</string>
+                    <key>options</key>
+                    <string>purge_ds_store</string>
+                    <key>chown</key>
+                    <array>
+                        <dict>
+                            <key>path</key>
+                            <string>Library</string>
+                            <key>user</key>
+                            <string>root</string>
+                            <key>group</key>
+                            <string>wheel</string>
+                        </dict>
+                        <dict>
+                            <key>path</key>
+                            <string>Library/PrivilegedHelperTools</string>
+                            <key>user</key>
+                            <string>root</string>
+                            <key>group</key>
+                            <string>wheel</string>
+                        </dict>
+                    </array>
+                </dict>
+            </dict>
         </dict>
         <dict>
             <key>Arguments</key>
             <dict>
                 <key>path_list</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/</string>
+                <string>%RECIPE_CACHE_DIR%/LoginLog/</string>
             </dict>
             <key>Processor</key>
             <string>PathDeleter</string>
