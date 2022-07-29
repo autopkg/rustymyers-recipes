@@ -50,7 +50,7 @@
                 <key>source_path</key>
                 <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg/*%NAME%.app</string>
                 <key>destination_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/Library/PrivilegedHelperTools/*%NAME%.app</string>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/Library/PrivilegedHelperTools/%NAME%.app</string>
             </dict>
         </dict>
         <dict>
