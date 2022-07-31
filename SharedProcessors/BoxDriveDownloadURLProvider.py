@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/local/autopkg/python
 #
 # Copyright 2018 The Pennsylvania State University.
 #
@@ -22,8 +22,14 @@ class BoxDriveDownloadURLProvider(URLGetter):
 
     description = "Provides download URL for Box Drive."
     input_variables = {
-        "update_url": {"required": False, "description": "URL for Box json",},
-        "os_type": {"required": True, "description": "os_type: mac, win, win32",},
+        "update_url": {
+            "required": False,
+            "description": "URL for Box json",
+        },
+        "os_type": {
+            "required": True,
+            "description": "os_type: mac, win, win32",
+        },
         "release": {
             "required": True,
             "description": "Release to check for: alpha, beta, enterprise, free, eap",

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/local/autopkg/python
 #
 # Copyright 2018 The Pennsylvania State University.
 #
@@ -22,7 +22,10 @@ class FossHubURLProvider(URLGetter):
             "required": False,
             "description": "URL for FossHub projects json",
         },
-        "app_name": {"required": True, "description": "Name of FossHub app",},
+        "app_name": {
+            "required": True,
+            "description": "Name of FossHub app",
+        },
         "app_type": {
             "required": False,
             "description": "Type of installer prefered, defaults to dmg",
