@@ -1,0 +1,18 @@
+Comment: |
+  Downloads Windows msi for WebEx
+  https://binaries.webex.com/WebexTeamsDesktop-Windows-Gold/Webex.msi
+Description: Downloads the latest version of Webex msi.
+Identifier: com.github.rustymyers.download.webex-win
+MinimumVersion: '2.3'
+Input:
+  NAME: Webex
+
+Process:
+    - Processor: URLDownloader
+      Arguments:
+          filename: '%NAME%.msi'
+          url: 'https://binaries.webex.com/WebexTeamsDesktop-Windows-Gold/Webex.msi'
+    - Processor: EndOfCheckPhase
+    - Processor: com.github.hansen-m.SharedProcessors/MSIInfoVersionProvider
+      Arguments:
+          msi_path: '%pathname%'
