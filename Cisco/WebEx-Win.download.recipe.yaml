@@ -11,7 +11,7 @@ Process:
     - Processor: URLDownloader
       Arguments:
           filename: '%NAME%.msi'
-          url: 'https://binaries.webex.com/WebexTeamsDesktop-Windows-Gold/Webex.msi'
+          url: 'https://binaries.webex.com/WebexTeamsDesktop-Windows-Gold/Webex_en.msi'
     - Processor: EndOfCheckPhase
     - Processor: com.github.hansen-m.SharedProcessors/MSIInfoVersionProvider
       Arguments:
