@@ -10,6 +10,7 @@ Older provider to download releases from SourceForge projects. Not sure if it st
 FossHub provides whitelisted IPs for organizations that want to cache downloads for redistribution internally. 
 
 Basic use for the processor is to pass the app name, which can be found within the json here: https://university.fosshub.com/projects.json
+You should pass the app_type to be sure you're getting the download requested. Check the json for the "type" you want, it has to match exactly in app_type. Sometimes the type has multiple options for platform or might have an additional space in the type. Create an override with these options of an existing recipe.
 ```
 <dict>
     <key>Processor</key>
@@ -18,6 +19,8 @@ Basic use for the processor is to pass the app name, which can be found within t
     <dict>
         <key>app_name</key>
         <string>Audacity</string>
+        <key>app_type</key>
+        <string>macOS DMG for Apple silicon </string>
     </dict>
 </dict>
 ```
