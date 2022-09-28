@@ -8,7 +8,7 @@ website. The downloads redirect to a fosshub.com download page, which
 is also searched for a download link. Permission has been received for Penn State to automate the download.
 Note: the Audacity.app code object is not signed at all.</string>
     <key>Identifier</key>
-    <string>com.github.rustymyers.download.Audacity</string>
+    <string>com.github.rustymyers.download.Audacity-arm</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
@@ -28,7 +28,7 @@ Note: the Audacity.app code object is not signed at all.</string>
                 <key>app_name</key>
                 <string>Audacity</string>
                 <key>app_type</key>
-                <string>macOS DMG </string>
+                <string>macOS DMG for Apple silicon </string>
             </dict>
         </dict>
         <dict>
