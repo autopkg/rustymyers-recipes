@@ -1,6 +1,10 @@
 Shared Processors
 ===============
 
+## createISOProvider.py
+
+Takes a source_path and creates an iso from it. Outputs 'iso_path' with absolute path. 
+
 ## SourceForgeURLProvider.py
 
 Older provider to download releases from SourceForge projects. Not sure if it still works (10/2018).
