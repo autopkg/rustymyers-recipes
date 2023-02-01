@@ -28,7 +28,7 @@ Note: the Audacity.app code object is not signed at all.</string>
                 <key>app_name</key>
                 <string>Audacity</string>
                 <key>app_type</key>
-                <string>macOS DMG </string>
+                <string>macOS DMG</string>
             </dict>
         </dict>
         <dict>
