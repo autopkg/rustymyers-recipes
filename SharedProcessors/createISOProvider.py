@@ -125,7 +125,11 @@ class createISOProvider(DmgMounter):
             self.output("No old iso")
 
         iso = pycdlib.PyCdlib()
-        VOLUME_NAME = os.path.basename(source_path)[:8]
+        if len(volume_name) > 0:
+        	VOLUME_NAME = volume_name
+        else:
+       		VOLUME_NAME = os.path.basename(source_path)[:8]
+       		
         self.output("VOLUME_NAME: {0}".format(VOLUME_NAME))
         iso.new(joliet=3, vol_ident=VOLUME_NAME, interchange_level=3)
         joliet = iso.get_joliet_facade()
@@ -141,11 +145,16 @@ class createISOProvider(DmgMounter):
         RECIPE_CACHE_DIR = self.env.get("RECIPE_CACHE_DIR")
         version = self.env.get("version")
         extension = "iso"
-        # Ser name from Source Path
+        volume_label = self.env["volume_name"]
+        # Set name from Source Path
         name = os.path.basename(source_path)
         self.output("name: {0}".format(name))
         # Default destination_path
-        volume_name = "{0}-{1}".format(name, version)
+        if len(volume_label) > 0:
+        	volume_name = volume_label
+        else:
+        	volume_name = "{0}-{1}".format(name, version)
+        	
         destination_name = "{0}.{1}".format(volume_name, extension)
         destination_iso = "{0}/{1}".format(RECIPE_CACHE_DIR, destination_name)
         if self.env.get("destination_path"):
