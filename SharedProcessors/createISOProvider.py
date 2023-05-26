@@ -126,10 +126,9 @@ class createISOProvider(DmgMounter):
 
         iso = pycdlib.PyCdlib()
         if len(volume_name) > 0:
-        	VOLUME_NAME = volume_name
+            VOLUME_NAME = volume_name
         else:
-       		VOLUME_NAME = os.path.basename(source_path)[:8]
-       		
+       	    VOLUME_NAME = os.path.basename(source_path)[:8]	
         self.output("VOLUME_NAME: {0}".format(VOLUME_NAME))
         iso.new(joliet=3, vol_ident=VOLUME_NAME, interchange_level=3)
         joliet = iso.get_joliet_facade()
@@ -151,10 +150,9 @@ class createISOProvider(DmgMounter):
         self.output("name: {0}".format(name))
         # Default destination_path
         if len(volume_label) > 0:
-        	volume_name = volume_label
+            volume_name = volume_label
         else:
-        	volume_name = "{0}-{1}".format(name, version)
-        	
+            volume_name = "{0}-{1}".format(name, version)
         destination_name = "{0}.{1}".format(volume_name, extension)
         destination_iso = "{0}/{1}".format(RECIPE_CACHE_DIR, destination_name)
         if self.env.get("destination_path"):
@@ -193,14 +191,11 @@ class createISOProvider(DmgMounter):
                 )
                 for match in matches:
                     self.output(f"  - {match}")
-
             if [c for c in "*?[]!" if c in source_path]:
                 self.output(
                     f"Using path '{matched_source_path}' matched from "
                     f"globbed '{source_path}'."
                 )
-
-
             self.output(
                 f"Using source path: '{source_path}'\n"
                 f"ISO path:  '{destination_iso}'\n"
