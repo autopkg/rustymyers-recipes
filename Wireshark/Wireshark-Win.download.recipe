@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Wireshark</string>
+		<string>Wireshark-Win</string>
 	</dict>
 	<key>Process</key>
 	<array>
