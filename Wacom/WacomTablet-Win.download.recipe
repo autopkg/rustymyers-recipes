@@ -13,7 +13,7 @@
 		<key>DOWNLOAD_URL</key>
 		<string>https://www.wacom.com/en-us/support/product-support/drivers</string>
 		<key>NAME</key>
-		<string>Wacom Bamboo Driver</string>
+		<string>Wacom Bamboo Driver Windows</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
@@ -34,7 +34,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%.exe</string>
+				<string>WacomTablet-Win.exe</string>
 				<key>url</key>
 				<string>%match%</string>
 			</dict>
