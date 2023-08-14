@@ -18,7 +18,7 @@ Note: the Audacity.app code object is not signed at all.</string>
     <string>0.2.9</string>
     <key>Process</key>
     <array>
-        <dict>		<dict>
+        <dict>
 			<key>Arguments</key>
 			<dict>
 				<key>warning_message</key>
