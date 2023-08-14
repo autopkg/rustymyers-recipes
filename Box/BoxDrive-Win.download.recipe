@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>BoxDrive</string>
+        <string>BoxDrive-Win</string>
         <key>JSON_URL</key>
         <string>https://cdn07.boxcdn.net/Autoupdate.json</string>
         <key>USER_AGENT</key>

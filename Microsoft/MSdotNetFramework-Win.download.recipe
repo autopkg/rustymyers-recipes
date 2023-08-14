@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>.Net Framework</string>
+		<string>.Net Framework Win</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0</string>

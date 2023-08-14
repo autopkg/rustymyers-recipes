@@ -5,7 +5,7 @@ Description: Downloads the latest version of Webex msi.
 Identifier: com.github.rustymyers.download.webex-win
 MinimumVersion: '2.3'
 Input:
-  NAME: Webex
+  NAME: Webex-Win
 
 Process:
     - Processor: URLDownloader

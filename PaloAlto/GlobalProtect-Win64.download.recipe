@@ -11,7 +11,7 @@
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>GlobalProtect</string>
+        <string>GlobalProtect-Win</string>
         <key>HOSTNAME</key>
         <string>vpn.example.com</string>
         <key>PLATFORM</key>

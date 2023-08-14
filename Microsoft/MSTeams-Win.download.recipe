@@ -11,7 +11,7 @@
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>MSTeams</string>
+        <string>MSTeams-Win</string>
         <key>MSTEAMS_ENVIRONMENT</key>
         <string>production</string>
         <key>MSTEAMS_PLATFORM</key>

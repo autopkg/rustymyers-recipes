@@ -1,7 +1,7 @@
 Description: Git 64 but exe installer for Windows from Github
 Identifier: com.github.rustymyers.download.Git-Win64
 Input:
-  NAME: Git
+  NAME: Git-Win
   BUILD: "64"
 MinimumVersion: '2.3'
 

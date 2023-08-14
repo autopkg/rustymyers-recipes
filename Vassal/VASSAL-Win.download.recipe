@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>VASSAL</string>
+		<string>VASSAL-Win</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>

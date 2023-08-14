@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>GeoDa</string>
+        <string>GeoDa-Win</string>
         <key>SEARCH_URL</key>
         <string>https://geodacenter.github.io/download_windows.html</string>
         <key>SEARCH_PATTERN</key>
