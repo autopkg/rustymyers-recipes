@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Veusz and makes a package.</string>
+	<key>Identifier</key>
+	<string>com.github.rustymyers.pkg.Veusz</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Veusz</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.3.1</string>
+	<key>ParentRecipe</key>
+	<string>com.github.rustymyers.download.Veusz</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>AppPkgCreator</string>
+			<key>Arguments</key>
+			<dict>
+				<key>bundleid</key>
+				<string>com.github.pkg.veusz</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
