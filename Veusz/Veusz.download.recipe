@@ -45,6 +45,17 @@
 			<string>AppDmgVersioner</string>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/Veusz.app</string>
+				<key>requirement</key>
+				<string>cdhash H"d50366772163beb7f32da37bec9602424e6cd9e7"</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
 		</dict>
