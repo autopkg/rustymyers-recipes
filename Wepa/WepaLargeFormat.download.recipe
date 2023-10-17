@@ -5,11 +5,11 @@
     <key>Description</key>
     <string>Wepa Print App</string>
     <key>Identifier</key>
-    <string>com.github.rustymyers.download.Wepa</string>
+    <string>com.github.rustymyers.download.WepaLargeFormat</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>Wepa Print App</string>
+        <string>Wepa Large Format</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.9</string>
@@ -21,9 +21,9 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>https://www.wepanow.com/downloads/wepa%20Print%20App.pkg</string>
+                <string>https://www.wepanow.com/downloads/wepa_Print_App_Large_Format.pkg</string>
                 <key>filename</key>
-                <string>WepaPrintApp.pkg</string>
+                <string>WepaLargeFormat.pkg</string>
             </dict>
         </dict>
         <dict>
