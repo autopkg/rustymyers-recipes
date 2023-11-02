@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Download latest EnergyPlus dmg.</string>
+    <string>Download latest EnergyPlus.</string>
     <key>Identifier</key>
     <string>com.github.rustymyers.download.EnergyPlus</string>
     <!-- Defaults to x86_64, pass arm64 to ARCH for Apple Silicon or arm for Linux -->
