@@ -30,6 +30,8 @@
             <string>GitHubReleasesInfoProvider</string>
             <key>Arguments</key>
             <dict>
+                <key>asset_regex</key>
+                <string>.*%ARCH%.dmg</string>
                 <key>github_repo</key>
                 <string>NREL/EnergyPlus</string>
             </dict>
@@ -37,38 +39,6 @@
         <dict>
             <key>Processor</key>
             <string>URLDownloader</string>
-        </dict>
-        <dict>
-          <key>Processor</key>
-          <string>com.github.jgstew.SharedProcessors/SharedUtilityMethods</string>
-        </dict>
-        <dict>
-          <key>Processor</key>
-          <string>com.github.jgstew.SharedProcessors/FileTextSearcher</string>
-          <key>Arguments</key>
-          <dict>
-              <key>search_path</key>
-              <string>%pathname%</string>
-              <key>search_pattern</key>
-              <string>https:\/\/.*%OS%%OSVersion%.*%ARCH%\.*%EXT%</string>
-              <key>first_result_only</key>
-              <string>True</string>
-              <key>file_search_results_var</key>
-              <string>download_url</string>
-          </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>EndOfCheckPhase</string>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLDownloader</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>%download_url%</string>
-            </dict>
         </dict>
     </array>
 </dict>
