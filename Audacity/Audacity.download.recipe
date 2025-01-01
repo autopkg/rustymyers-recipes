@@ -15,18 +15,18 @@ Note: the Audacity.app code object is not signed at all.</string>
         <string>Audacity</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.9</string>
+    <string>1.1</string>
     <key>Process</key>
     <array>
         <dict>
-			<key>Arguments</key>
-			<dict>
-				<key>warning_message</key>
-				<string>Audacity recipe no longer maintained. Switching to using: com.github.ahousseini-recipes.pkg.Audacity</string>
-			</dict>
-			<key>Processor</key>
-			<string>DeprecationWarning</string>
-		</dict>
+            <key>Arguments</key>
+            <dict>
+                <key>warning_message</key>
+                <string>Audacity recipe no longer maintained. Switching to using: com.github.ahousseini-recipes.pkg.Audacity</string>
+            </dict>
+            <key>Processor</key>
+            <string>DeprecationWarning</string>
+        </dict>
     </array>
 </dict>
 </plist>
