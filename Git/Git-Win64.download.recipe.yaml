@@ -17,3 +17,4 @@ Process:
   - Processor: URLDownloader
     Arguments:
       filename: "%NAME%-%version_exe%.exe"
+  - Processor: EndOfCheckPhase

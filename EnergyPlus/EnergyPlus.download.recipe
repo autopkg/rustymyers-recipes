@@ -3,13 +3,15 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Download latest EnergyPlus.</string>
+    <string>Download latest EnergyPlus.
+    
+Defaults to x86_64, pass arm64 to ARCH for Apple Silicon or arm for Linux
+OS can be Windows, macOS, Ubuntu, CentOS
+osVersion should be nothing for Windows, (10/11/12) for macOS  and linux version  for each distro
+EXT can be (zip/exe) for Windows, (dmg/tar.gz) for macOS and (run/sh/tar.gz) for linux
+</string>
     <key>Identifier</key>
     <string>com.github.rustymyers.download.EnergyPlus</string>
-    <!-- Defaults to x86_64, pass arm64 to ARCH for Apple Silicon or arm for Linux -->
-    <!-- OS can be Windows, macOS, Ubuntu, CentOS -->
-    <!-- osVersion should be nothing for Windows, (10/11/12) for macOS  and linux version  for each distro -->
-    <!-- EXT can be (zip/exe) for Windows, (dmg/tar.gz) for macOS and (run/sh/tar.gz) for linux -->
     <key>Input</key>
     <dict>
         <key>ARCH</key>
@@ -22,7 +24,7 @@
         <string>dmg</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.9</string>
+    <string>0.5.0</string>
     <key>Process</key>
     <array>
         <dict>
@@ -39,6 +41,10 @@
         <dict>
             <key>Processor</key>
             <string>URLDownloader</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
         </dict>
     </array>
 </dict>
