@@ -1,0 +1,23 @@
+Description: Downloads GeoDa 64 bit exe.
+Identifier: com.github.rustymyers.download.GeoDa-Win64
+MinimumVersion: 0.2.9
+
+Input:
+  NAME: GeoDa-Win
+  SEARCH_URL: https://geodacenter.github.io/download_windows.html
+  SEARCH_PATTERN: (https:\/\/.*GeoDa-(?P<version>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})-Windows-64bit.exe)
+  USER_AGENT: Mozilla/5.0 (Windows NT 6.3; Win64, x64; Trident/7.0; rv:11.0) like Gecko
+
+Process:
+- Processor: URLTextSearcher
+  Arguments:
+    re_pattern: '%SEARCH_PATTERN%'
+    url: '%SEARCH_URL%'
+
+- Processor: URLDownloader
+  Arguments:
+    request_headers:
+      user-agent: '%USER_AGENT%'
+    url: '%match%'
+
+- Processor: EndOfCheckPhase
