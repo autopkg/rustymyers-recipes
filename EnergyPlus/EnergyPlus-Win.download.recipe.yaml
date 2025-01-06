@@ -2,13 +2,14 @@ Description: Download latest EnergyPlus dmg.
 Identifier: com.github.rustymyers.download.EnergyPlus-Win
 MinimumVersion: 0.2.9
 
-Input: {}
+Input:
+  EXT: exe
 
 Process:
   - Processor: GitHubReleasesInfoProvider
     Arguments:
       github_repo: NREL/EnergyPlus
-      asset_regex: ".*Windows-x86_64.exe"
+      asset_regex: ".*Windows-x86_64.%EXT%"
 
   - Processor: URLDownloader
 
