@@ -1,0 +1,23 @@
+Description: Downloads the latest version of Box Drive for Windows.
+Identifier: com.github.rustymyers.download.boxdrive-win
+MinimumVersion: 0.4.0
+
+Input:
+  NAME: BoxDrive-Win
+  JSON_URL: https://cdn07.boxcdn.net/Autoupdate.json
+  USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.28.10 (KHTML, like Gecko) Version/6.0.3 Safari/536.28.10
+
+Process:
+  - Processor: com.github.rustymyers.SharedProcessors/BoxDriveDownloadURLProvider
+    Arguments:
+      os_type: win
+      release: enterprise
+      url_type: rollout-url
+
+  - Processor: URLDownloader
+    Arguments:
+      request_headers:
+        user-agent: "%USER_AGENT%"
+      url: "%url%"
+
+  - Processor: EndOfCheckPhase
