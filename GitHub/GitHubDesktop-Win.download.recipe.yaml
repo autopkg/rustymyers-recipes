@@ -1,0 +1,18 @@
+Description: Downloads the latest version of GitHub Desktop.
+Identifier: com.github.rustymyers.download.GitHubDesktop-Win
+MinimumVersion: 1.0.2
+
+Input:
+  NAME: GitHub Desktop Win32
+
+Process:
+- Processor: URLDownloader
+  Arguments:
+    filename: GitHubDesktop.msi
+    url: https://central.github.com/deployments/desktop/desktop/latest/win32?format=msi
+
+- Processor: EndOfCheckPhase
+
+- Processor: com.github.hansen-m.SharedProcessors/MSIInfoVersionProvider
+  Arguments:
+    msi_path: '%pathname%'
