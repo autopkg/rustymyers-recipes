@@ -1,0 +1,17 @@
+Description: Download latest EnergyPlus.
+Identifier: com.github.rustymyers.download.EnergyPlus
+MinimumVersion: 0.2.9
+
+Input:
+  EXT: dmg
+  OSVersion: "13"
+
+Process:
+  - Processor: GitHubReleasesInfoProvider
+    Arguments:
+      github_repo: NREL/EnergyPlus
+      asset_regex: ".*macOS%OSVersion%.*.%EXT%"
+
+  - Processor: URLDownloader
+
+  - Processor: EndOfCheckPhase
