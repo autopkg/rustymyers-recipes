@@ -1,0 +1,19 @@
+Description: Downloads the latest version of Adobe's Creative Cloud Desktop Cloud Installer.
+Identifier: com.github.rustymyers.download.AdobeCreativeCloudWin
+MinimumVersion: 0.6.1
+
+Input:
+  NAME: CreativeCloudSetup
+  DOWNLOAD_URL: https://ccmdls.adobe.com/AdobeProducts/KCCC/1/win32/CreativeCloudSet-Up.exe
+
+Process:
+  - Processor: URLDownloader
+    Arguments:
+      filename: "%NAME%.exe"
+      url: "%DOWNLOAD_URL%"
+
+  - Processor: com.github.hansen-m.SharedProcessors/ExeVersionExtractor
+    Arguments:
+      exe_path: "%pathname%"
+
+  - Processor: EndOfCheckPhase
