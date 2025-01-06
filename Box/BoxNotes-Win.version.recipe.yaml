@@ -1,0 +1,11 @@
+Description: Gets version of Box Notes for download recipe.
+Identifier: com.github.rustymyers.version.boxnotes-win
+MinimumVersion: 0.4.0
+ParentRecipe: com.github.rustymyers.download.boxnotes-win
+
+Process:
+  - Processor: com.github.hansen-m.SharedProcessors/HachoirMetaDataProvider
+    Arguments:
+      file_path: "%pathname%"
+
+  - Processor: EndOfCheckPhase

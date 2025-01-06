@@ -1,0 +1,18 @@
+Description: Downloads the latest version of Box Notes for Windows.
+Identifier: com.github.rustymyers.download.boxnotes-win
+MinimumVersion: 0.4.0
+
+Input:
+  NAME: BoxNotes-Win
+  DOWNLOAD_URL: https://e3.boxcdn.net/box-installers/boxnotes/win/latest/BoxNotesSetup.exe
+  USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.28.10 (KHTML, like Gecko) Version/6.0.3 Safari/536.28.10
+
+Process:
+  - Processor: URLDownloader
+    Arguments:
+      filename: "%NAME%.exe"
+      request_headers:
+        user-agent: "%USER_AGENT%"
+      url: "%DOWNLOAD_URL%"
+
+  - Processor: EndOfCheckPhase
