@@ -1,0 +1,25 @@
+Description: TextPad is a powerful, general purpose editor for plain text files. Easy to use, with all the features a power user requires.
+Identifier: com.github.rustymyers.download.TextPad-Win
+MinimumVersion: 0.2.9
+
+Input:
+  NAME: TextPad
+  SEARCH_URL: https://www.textpad.com/download/
+  SEARCH_PATTERN: file\?path\=v[0-9]{1,4}\/x64\/txpeng[0-9]{3,4}-64.zip
+  USER_AGENT: Mozilla/4.0
+
+Process:
+- Processor: URLTextSearcher
+  Arguments:
+    re_pattern: '%SEARCH_PATTERN%'
+    request_headers:
+      user-agent: '%USER_AGENT%'
+    url: '%SEARCH_URL%'
+
+- Processor: URLDownloader
+  Arguments:
+    request_headers:
+      user-agent: '%USER_AGENT%'
+    url: https://www.textpad.com/%match%
+
+- Processor: EndOfCheckPhase

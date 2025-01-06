@@ -1,0 +1,18 @@
+Description: Downloads KompoZer
+Identifier: com.github.rustymyers.download.kompozer
+MinimumVersion: 0.6.1
+
+Input:
+  NAME: KompoZer
+
+Process:
+- Processor: com.github.jessepeterson.munki.GrandPerspective/SourceForgeURLProvider
+  Arguments:
+    SOURCEFORGE_FILE_PATTERN: \.dmg
+    SOURCEFORGE_PROJECT_ID: 170132
+
+- Processor: URLDownloader
+  Arguments:
+    filename: '%NAME%.dmg'
+
+- Processor: EndOfCheckPhase

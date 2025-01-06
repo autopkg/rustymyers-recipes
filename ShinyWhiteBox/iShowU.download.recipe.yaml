@@ -1,0 +1,17 @@
+Description: Download latest iShowU dmg.
+Identifier: com.github.rustymyers.download.iShowU
+MinimumVersion: 0.2.9
+
+Input: {}
+
+Process:
+- Processor: URLTextSearcher
+  Arguments:
+    re_pattern: (?P<dmg>http://www.shinywhitebox.com/downloads/iShowU_(?P<version>[0-9.]+)\.dmg)
+    url: https://www.shinywhitebox.com/store/changelog.php?p=1
+
+- Processor: URLDownloader
+  Arguments:
+    url: '%dmg%'
+
+- Processor: EndOfCheckPhase

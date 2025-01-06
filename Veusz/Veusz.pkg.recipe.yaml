@@ -1,0 +1,12 @@
+Description: Veusz and makes a package.
+Identifier: com.github.rustymyers.pkg.Veusz
+ParentRecipe: com.github.rustymyers.download.Veusz
+MinimumVersion: '1.0'
+
+Input:
+  NAME: Veusz
+
+Process:
+- Processor: AppPkgCreator
+  Arguments:
+    bundleid: com.github.pkg.veusz

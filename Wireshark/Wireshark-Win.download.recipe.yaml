@@ -1,0 +1,31 @@
+Description: Downloads the latest version of Wireshark.
+Identifier: com.github.rustymyers.download.Wireshark-Win
+
+Input:
+  NAME: Wireshark-Win
+
+Process:
+- Processor: URLTextSearcher
+  Arguments:
+    re_flags:
+    - IGNORECASE
+    re_pattern: https:\/\/[^"]*win64/Wireshark-[0-9]{1,4}.{1,4}-x64\.exe
+    url: https://www.wireshark.org/download.html
+
+- Processor: URLDownloader
+  Arguments:
+    filename: '%NAME%.exe'
+    url: '%match%'
+
+- Processor: EndOfCheckPhase
+
+- Processor: com.github.hansen-m.SharedProcessors/WinInstallerExtractor
+  Arguments:
+    exe_path: '%pathname%'
+    extract_dir: ExeExtract
+    preserve_paths: 'False'
+
+- Processor: PathDeleter
+  Arguments:
+    path_list:
+    - '%RECIPE_CACHE_DIR%/ExeExtract'

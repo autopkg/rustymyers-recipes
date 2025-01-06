@@ -1,0 +1,19 @@
+Comment: Created with Recipe Robot v1.0.2 (https://github.com/homebysix/recipe-robot)
+Description: Downloads the latest version of VASSAL.
+Identifier: com.github.rustymyers.download.VASSAL-Win
+MinimumVersion: 0.6.1
+
+Input:
+  NAME: VASSAL-Win
+
+Process:
+- Processor: com.github.jessepeterson.munki.GrandPerspective/SourceForgeURLProvider
+  Arguments:
+    SOURCEFORGE_FILE_PATTERN: \.exe
+    SOURCEFORGE_PROJECT_ID: 90612
+
+- Processor: URLDownloader
+  Arguments:
+    filename: '%NAME%.exe'
+
+- Processor: EndOfCheckPhase

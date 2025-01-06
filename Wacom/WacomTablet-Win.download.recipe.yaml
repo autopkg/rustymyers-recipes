@@ -1,0 +1,21 @@
+Description: Downloads the latest version of Wacom Tablet drivers for Windows.
+Identifier: com.github.rustymyers.download.WacomTablet-Win
+MinimumVersion: 0.4.0
+
+Input:
+  NAME: Wacom Tablet Driver Windows
+  DOWNLOAD_PATTERN: (?P<url>(https:\/\/cdn\.wacom\.com\/u\/productsupport\/drivers\/win\/professional\/WacomTablet_+(?P<version>[\d.-]+)\.exe))
+  DOWNLOAD_URL: https://www.wacom.com/en-us/support/product-support/drivers
+
+Process:
+- Processor: URLTextSearcher
+  Arguments:
+    re_pattern: '%DOWNLOAD_PATTERN%'
+    url: '%DOWNLOAD_URL%'
+
+- Processor: URLDownloader
+  Arguments:
+    filename: WacomTablet-Win.exe
+    url: '%match%'
+
+- Processor: EndOfCheckPhase

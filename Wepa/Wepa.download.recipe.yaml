@@ -1,0 +1,46 @@
+Description: Wepa Print App
+Identifier: com.github.rustymyers.download.Wepa
+MinimumVersion: 0.3.1
+
+Input:
+  NAME: Wepa Print App
+
+Process:
+- Processor: URLDownloader
+  Arguments:
+    filename: WepaPrintApp.pkg
+    url: https://www.wepanow.com/downloads/wepa%20Print%20App.pkg
+
+- Processor: CodeSignatureVerifier
+  Arguments:
+    expected_authority_names:
+    - 'Developer ID Installer: WEPA Inc. (K94SXW5SJ9)'
+    - Developer ID Certification Authority
+    - Apple Root CA
+    input_path: '%pathname%'
+
+- Processor: EndOfCheckPhase
+
+- Processor: FlatPkgUnpacker
+  Arguments:
+    destination_path: '%RECIPE_CACHE_DIR%/WEPA'
+    flat_pkg_path: '%pathname%'
+
+- Processor: PkgPayloadUnpacker
+  Arguments:
+    destination_path: '%RECIPE_CACHE_DIR%/WEPAAPP'
+    pkg_payload_path: '%RECIPE_CACHE_DIR%/WEPA/app.pkg/Payload'
+
+- Processor: PlistReader
+  Arguments:
+    info_path: '%RECIPE_CACHE_DIR%/WEPAAPP/Applications/WEPA-PrintApp.app/Contents/Info.plist'
+    plist_keys:
+      CFBundleIdentifier: bundleid
+      CFBundleName: app_name
+      CFBundleShortVersionString: version
+
+- Processor: PathDeleter
+  Arguments:
+    path_list:
+    - '%RECIPE_CACHE_DIR%/WEPA'
+    - '%RECIPE_CACHE_DIR%/WEPAAPP'

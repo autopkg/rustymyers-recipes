@@ -1,0 +1,19 @@
+Comment: Created with Recipe Robot v1.0.2 (https://github.com/homebysix/recipe-robot)
+Description: Downloads the latest version of opentoonz.
+Identifier: com.github.rustymyers.download.opentoonz-win
+MinimumVersion: 0.6.1
+
+Input:
+  NAME: opentoonz
+  GITHUB_REPO: opentoonz/opentoonz
+
+Process:
+- Processor: GitHubReleasesInfoProvider
+  Arguments:
+    github_repo: '%GITHUB_REPO%'
+
+- Processor: URLDownloader
+  Arguments:
+    filename: '%NAME%-%version%.exe'
+
+- Processor: EndOfCheckPhase

@@ -1,0 +1,25 @@
+Description: 'Download latest Synfig dmg. Permission was obtained from FossHub to automate the download of this software. Please follow their terms of service: https://www.fosshub.com/tos.html'
+Identifier: com.github.rustymyers.download.Synfig
+MinimumVersion: 0.2.9
+
+Input:
+  NAME: Synfig
+  SEARCH_URL: http://www.fosshub.com/Synfig.html
+  SEARCH_PATTERN: \/Synfig.html.(synfigstudio-([0-9].[0-9].[0-9]))\.dmg
+  SEARCH_PATTERN2: (https.*\.dmg)
+  USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.28.10 (KHTML, like Gecko) Version/6.0.3 Safari/536.28.10
+
+Process:
+- Processor: com.github.rustymyers.SharedProcessors/FossHubURLProvider
+  Arguments:
+    app_name: Synfig
+    app_type: OS X Binary
+
+- Processor: URLDownloader
+  Arguments:
+    request_headers:
+      Referer: https://www.fosshub.com/Synfig.html
+      user-agent: '%USER_AGENT%'
+    url: '%url%'
+
+- Processor: EndOfCheckPhase

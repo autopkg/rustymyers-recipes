@@ -1,0 +1,27 @@
+Comment: Created with Recipe Robot v1.0.2 (https://github.com/homebysix/recipe-robot)
+Description: Downloads the latest version of Veusz.
+Identifier: com.github.rustymyers.download.Veusz
+MinimumVersion: 0.6.1
+
+Input:
+  NAME: Veusz
+
+Process:
+- Processor: GitHubReleasesInfoProvider
+  Arguments:
+    github_repo: veusz/veusz
+
+- Processor: URLDownloader
+  Arguments:
+    filename: '%NAME%.dmg'
+
+- Processor: AppDmgVersioner
+  Arguments:
+    dmg_path: '%pathname%'
+
+- Processor: CodeSignatureVerifier
+  Arguments:
+    input_path: '%pathname%/Veusz.app'
+    requirement: cdhash H"d50366772163beb7f32da37bec9602424e6cd9e7"
+
+- Processor: EndOfCheckPhase

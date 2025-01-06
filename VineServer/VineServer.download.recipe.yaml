@@ -1,0 +1,24 @@
+Identifier: com.github.rustymyers.download.VineServer
+MinimumVersion: 0.6.1
+
+Input:
+  NAME: Vine Server
+  BIGFIXNAME: VineServer
+  Description: Downloads the latest version of Vine Server.
+
+Process:
+- Processor: com.github.jessepeterson.munki.GrandPerspective/SourceForgeURLProvider
+  Arguments:
+    SOURCEFORGE_FILE_PATTERN: \.dmg
+    SOURCEFORGE_PROJECT_NAME: osxvnc
+
+- Processor: URLDownloader
+  Arguments:
+    filename: '%BIGFIXNAME%.dmg'
+
+- Processor: Versioner
+  Arguments:
+    input_plist_path: '%pathname%/Vine Server.app/Contents/Info.plist'
+    plist_version_key: CFBundleShortVersionString
+
+- Processor: EndOfCheckPhase

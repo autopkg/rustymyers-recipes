@@ -1,0 +1,11 @@
+Description: Downloads and installs the current release version of SuspiciousPackage.
+Identifier: com.github.rustymyers.install.SuspiciousPackage
+ParentRecipe: com.github.novaksam.pkg.SuspiciousPackage
+MinimumVersion: 0.6.1
+
+Input: {}
+
+Process:
+- Processor: Installer
+  Arguments:
+    pkg_path: '%pkg_path%'

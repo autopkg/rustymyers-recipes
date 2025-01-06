@@ -1,0 +1,14 @@
+Description: Wepa Print App
+Identifier: com.github.rustymyers.download.Wepa-Win
+MinimumVersion: 0.2.9
+
+Input:
+  NAME: Wepa Print App Win
+
+Process:
+- Processor: URLDownloader
+  Arguments:
+    filename: WepaPrintApp.msi
+    url: https://www.wepanow.com/downloads/wepa%20Print%20App.msi
+
+- Processor: EndOfCheckPhase

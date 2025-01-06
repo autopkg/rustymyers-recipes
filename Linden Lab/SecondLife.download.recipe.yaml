@@ -1,0 +1,24 @@
+Description: Downloads latest SecondLife installer.
+Identifier: com.github.rustymyers.download.SecondLife
+MinimumVersion: 0.3.1
+
+Input:
+  NAME: SecondLife
+
+Process:
+- Processor: URLTextSearcher
+  Arguments:
+    re_pattern: a href=.?(?P<url>http.*?Second_Life.*?\.dmg)
+    url: https://secondlife.com/support/downloads/
+
+- Processor: URLDownloader
+  Arguments:
+    filename: '%NAME%.dmg'
+    url: '%url%'
+
+- Processor: EndOfCheckPhase
+
+- Processor: CodeSignatureVerifier
+  Arguments:
+    input_path: '%pathname%/Second Life Viewer.app'
+    requirement: identifier "com.secondlife.indra.viewer" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = FVYLQXE8Z7

@@ -1,0 +1,41 @@
+Description: Downloads the latest version of PaloAlto's GlobalProtect installer package and renames the package with version. Requires the use of HOSTNAME to point at your GlobalProtect instance. Use pkg_path in parent recipes for package with version.
+Identifier: com.github.rustymyers.pkg.globalprotect
+ParentRecipe: com.github.peshay.download.GlobalProtect
+MinimumVersion: 1.0.0
+
+Input:
+  NAME: GlobalProtect
+  VENDOR: PaloAlto
+  SOFTWARETITLE: GlobalProtect
+
+Process:
+- Processor: FlatPkgUnpacker
+  Arguments:
+    destination_path: '%RECIPE_CACHE_DIR%/downloads/unpack'
+    flat_pkg_path: '%pathname%'
+
+- Processor: FileFinder
+  Arguments:
+    pattern: '%RECIPE_CACHE_DIR%/downloads/unpack/*gp.pkg'
+
+- Processor: PkgPayloadUnpacker
+  Arguments:
+    destination_path: '%RECIPE_CACHE_DIR%/downloads/payload/GlobalProtect.app'
+    pkg_payload_path: '%found_filename%/Payload'
+
+- Processor: Versioner
+  Arguments:
+    input_plist_path: '%RECIPE_CACHE_DIR%/downloads/payload/GlobalProtect.app/Contents/Info.plist'
+    plist_version_key: CFBundleShortVersionString
+
+- Processor: PkgCopier
+  Arguments:
+    pkg_path: '%RECIPE_CACHE_DIR%/%VENDOR%_%SOFTWARETITLE%_%version%.pkg'
+    source_pkg: '%pathname%'
+
+- Processor: PathDeleter
+  Arguments:
+    path_list:
+    - '%RECIPE_CACHE_DIR%/downloads/unpack'
+    - '%RECIPE_CACHE_DIR%/downloads/payload'
+    - '%RECIPE_CACHE_DIR%/downloads/GlobalProtect.pkg'

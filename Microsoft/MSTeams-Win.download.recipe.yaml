@@ -1,0 +1,21 @@
+Description: Downloads the latest version of Microsoft Teams dmg from Microsoft. Environment can be defined (although production seems to be the only available), as can platform (defaults to osx).
+Identifier: com.github.rustymyers.download.MSTeams-Win
+MinimumVersion: 0.6.0
+
+Input:
+  NAME: MSTeams-Win
+  MSTEAMS_ENVIRONMENT: production
+  MSTEAMS_PLATFORM: windows
+
+Process:
+- Processor: com.github.apettinen.SharedProcessors/MSTeamsURLProvider
+  Arguments:
+    environment: '%MSTEAMS_ENVIRONMENT%'
+    platform: '%MSTEAMS_PLATFORM%'
+
+- Processor: URLDownloader
+  Arguments:
+    curl_opts:
+    - --no-alpn
+
+- Processor: EndOfCheckPhase

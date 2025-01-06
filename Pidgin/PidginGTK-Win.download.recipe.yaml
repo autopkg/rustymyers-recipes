@@ -1,0 +1,26 @@
+Description: 'Download latest Pidgin with GTK exe. Permission was obtained from FossHub to automate the download of this software. Please follow their terms of service: https://www.fosshub.com/tos.html'
+Identifier: com.github.rustymyers.download.PidginGTK-Win
+MinimumVersion: 0.2.9
+
+Input:
+  NAME: Pidgin
+  SEARCH_URL: https://www.fosshub.com/Pidgin.html
+  SEARCH_PATTERN: (/.*pidgin.*-offline.exe)
+  SEARCH_PATTERN2: pidgin-([0-9]{1,}.[0-9]{1,}.[0-9]{1,})-offline.exe
+  SEARCH_PATTERN3: src="(.*pidgin-[0-9]{1,}.[0-9]{1,}.[0-9]{1,}-offline.exe)
+  USER_AGENT: Mozilla/5.0 (Windows NT 6.3; Win64, x64; Trident/7.0; rv:11.0) like Gecko
+
+Process:
+- Processor: com.github.rustymyers.SharedProcessors/FossHubURLProvider
+  Arguments:
+    app_name: Pidgin
+    app_type: Windows Installer (with GTK)
+
+- Processor: URLDownloader
+  Arguments:
+    CURL_PATH: /usr/bin/curl
+    request_headers:
+      user-agent: '%USER_AGENT%'
+    url: '%url%'
+
+- Processor: EndOfCheckPhase

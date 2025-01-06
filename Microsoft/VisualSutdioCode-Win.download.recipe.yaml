@@ -1,0 +1,18 @@
+Description: Downloads the current release version of Visual Studio Code.
+Identifier: com.github.rustymyers.download.visualstudiocode-win
+MinimumVersion: 1.0.4
+
+Input:
+  NAME: Visual Studio Code Windows
+
+Process:
+  - Processor: URLDownloader
+    Arguments:
+      filename: vscode.exe
+      url: https://code.visualstudio.com/sha/download?build=stable&os=win32-x64
+
+  - Processor: EndOfCheckPhase
+
+  - Processor: com.github.hansen-m.SharedProcessors/HachoirMetaDataProvider3
+    Arguments:
+      file_path: "%pathname%"

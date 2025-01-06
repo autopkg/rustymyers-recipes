@@ -1,0 +1,18 @@
+Description: Downloads Latest 2.xx KeePass MSI
+Identifier: com.github.rustymyers.download.keepass
+MinimumVersion: 0.6.1
+
+Input:
+  NAME: KeePass
+
+Process:
+- Processor: com.github.jessepeterson.munki.GrandPerspective/SourceForgeURLProvider
+  Arguments:
+    SOURCEFORGE_FILE_PATTERN: KeePass-2.[0-9]{1,}.msi
+    SOURCEFORGE_PROJECT_NAME: keepass
+
+- Processor: URLDownloader
+  Arguments:
+    filename: '%NAME%.msi'
+
+- Processor: EndOfCheckPhase

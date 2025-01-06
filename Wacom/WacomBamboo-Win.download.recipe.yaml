@@ -1,0 +1,13 @@
+Description: Downloads the latest version of Wacom Bamboo tablet drivers for Windows.
+Identifier: com.github.rustymyers.download.WacomBamboo-Win
+MinimumVersion: '1.1'
+
+Input:
+  NAME: Wacom Bamboo Driver Windows
+  DOWNLOAD_PATTERN: (http://cdn.wacom.com/u/productsupport/drivers/win/consumer/pentablet_+(?P<version>[0-9].+[0-9].+[0-9]*-*[0-9]).exe)
+  DOWNLOAD_URL: https://www.wacom.com/en-us/support/product-support/drivers
+
+Process:
+- Processor: DeprecationWarning
+  Arguments:
+    warning_message: Bamboo downloads no longer availiable from Wacom. See WacomTablet-Win.download.recipe

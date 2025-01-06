@@ -1,0 +1,25 @@
+Description: 'Download latest Synfig 64bit exe. Permission was obtained from FossHub to automate the download of this software. Please follow their terms of service: https://www.fosshub.com/tos.html'
+Identifier: com.github.rustymyers.download.Synfig-Win
+MinimumVersion: 0.2.9
+
+Input:
+  NAME: Synfig
+  SEARCH_URL: http://www.fosshub.com/Synfig.html
+  SEARCH_PATTERN: \/Synfig.html.(synfigstudio-([0-9].[0-9].[0-9]))-64bit.exe
+  SEARCH_PATTERN2: (https.*-64bit.exe)
+  USER_AGENT: Mozilla/5.0 (Windows NT 6.3; Win64, x64; Trident/7.0; rv:11.0) like Gecko
+
+Process:
+- Processor: com.github.rustymyers.SharedProcessors/FossHubURLProvider
+  Arguments:
+    app_name: Synfig
+    app_type: 64-bit Installer
+
+- Processor: URLDownloader
+  Arguments:
+    request_headers:
+      Referer: https://www.fosshub.com/Synfig.html
+      user-agent: '%USER_AGENT%'
+    url: '%url%'
+
+- Processor: EndOfCheckPhase

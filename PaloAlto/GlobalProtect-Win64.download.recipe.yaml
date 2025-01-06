@@ -1,0 +1,23 @@
+Comment: Use HOSTNAME var to specify your PaloAlto VPN Gateway. For PLATFORM use either mac or win
+Description: Downloads latest version of GlobalProtect VPN Client from YOUR Palo Alto.
+Identifier: com.github.rustymyers.download.globalprotect-win64
+MinimumVersion: 0.6.1
+
+Input:
+  NAME: GlobalProtect-Win
+  HOSTNAME: vpn.example.com
+  PLATFORM: windows
+  VERSION: '64'
+  DOWNLOAD_URL: https://%HOSTNAME%/global-protect/getmsi.esp?version=%VERSION%&platform=%PLATFORM%
+
+Process:
+- Processor: URLDownloader
+  Arguments:
+    filename: '%NAME%.msi'
+    url: '%DOWNLOAD_URL%'
+
+- Processor: EndOfCheckPhase
+
+- Processor: com.github.hansen-m.SharedProcessors/MSIInfoVersionProvider
+  Arguments:
+    msi_path: '%pathname%'

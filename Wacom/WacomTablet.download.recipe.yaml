@@ -1,0 +1,29 @@
+Description: Downloads the latest version of Wacom Tablet drivers for macOS.
+Identifier: com.github.rustymyers.download.WacomTablet
+MinimumVersion: 0.4.0
+
+Input:
+  NAME: WacomTablet
+  DOWNLOAD_PATTERN: (?P<url>(https:\/\/cdn\.wacom\.com\/u\/productsupport\/drivers\/mac\/professional\/WacomTablet_+(?P<version>[\d.-]+)\.dmg))
+  DOWNLOAD_URL: https://www.wacom.com/en-us/support/product-support/drivers
+
+Process:
+- Processor: URLTextSearcher
+  Arguments:
+    re_pattern: '%DOWNLOAD_PATTERN%'
+    url: '%DOWNLOAD_URL%'
+
+- Processor: URLDownloader
+  Arguments:
+    filename: '%NAME%.dmg'
+    url: '%url%'
+
+- Processor: EndOfCheckPhase
+
+- Processor: CodeSignatureVerifier
+  Arguments:
+    expected_authority_names:
+    - 'Developer ID Installer: Wacom Technology Corp. (EG27766DY7)'
+    - Developer ID Certification Authority
+    - Apple Root CA
+    input_path: '%pathname%/Install Wacom Tablet.pkg'

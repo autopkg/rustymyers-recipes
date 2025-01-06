@@ -1,0 +1,40 @@
+Description: Uses parent download for LoginLog and creates a package.
+Identifier: com.github.rustymyers.pkg.LoginLog
+ParentRecipe: com.github.rustymyers.download.LoginLog
+MinimumVersion: 1.0.0
+
+Input:
+  NAME: LoginLog
+
+Process:
+- Processor: PkgRootCreator
+  Arguments:
+    pkgdirs:
+      Library: '0755'
+      Library/PrivilegedHelperTools: '0755'
+    pkgroot: '%RECIPE_CACHE_DIR%/%NAME%'
+
+- Processor: Copier
+  Arguments:
+    destination_path: '%RECIPE_CACHE_DIR%/%NAME%/Library/PrivilegedHelperTools/LoginLog.app'
+    source_path: '%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg/*LoginLog.app'
+
+- Processor: PkgCreator
+  Arguments:
+    pkg_request:
+      chown:
+      - group: wheel
+        path: Library
+        user: root
+      - group: wheel
+        path: Library/PrivilegedHelperTools
+        user: root
+      id: com.github.rustymyers.LoginLog.pkg
+      options: purge_ds_store
+      pkgdir: '%RECIPE_CACHE_DIR%/'
+    pkgname: '%NAME%-%version%'
+    version: '%version%'
+
+- Processor: PathDeleter
+  Arguments:
+    path_list: '%RECIPE_CACHE_DIR%/LoginLog/'
