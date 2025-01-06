@@ -1,0 +1,24 @@
+Description: Downloads the latest version of Duo for Windows login screen.
+Identifier: com.github.rustymyers.download.duo-win
+MinimumVersion: 0.4.0
+
+Input:
+  NAME: Duo
+  DOWNLOAD_URL: http://dl.duosecurity.com/DuoWinLogon_MSIs_Policies_and_Documentation-latest.zip
+  USER_AGENT: Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+
+Process:
+- Processor: URLDownloader
+  Arguments:
+    filename: '%NAME%.zip'
+    request_headers:
+      user-agent: '%USER_AGENT%'
+    url: '%DOWNLOAD_URL%'
+
+- Processor: Unarchiver
+
+- Processor: com.github.hansen-m.SharedProcessors/MSIInfoVersionProvider
+  Arguments:
+    msi_path: '%RECIPE_CACHE_DIR%/%NAME%/DuoWindowsLogon64.msi'
+
+- Processor: EndOfCheckPhase
