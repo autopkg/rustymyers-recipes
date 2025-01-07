@@ -1,5 +1,5 @@
 Description: Downloads the latest version of QGIS LTS.
-Identifier: edu.psu.download.QGIS-Win
+Identifier: com.github.rustymyers.download.QGIS-Win
 MinimumVersion: "2.7.2"
 
 Input:
