@@ -1,0 +1,24 @@
+Description: Downloads the latest version of QGIS LTS.
+Identifier: edu.psu.download.QGIS-Win
+MinimumVersion: "2.7.2"
+
+Input:
+  NAME: QGIS
+  DOWNLOAD_URL: "https://www.qgis.org/download/"
+
+Process:
+  - Processor: URLTextSearcher
+    Arguments:
+      re_pattern: ((?=Long Term Version for Windows)*QGIS-OSGeo4W-(([0-9]{1,}.){3,}-[0-9]{1,}).msi)
+      url: "%DOWNLOAD_URL%"
+
+  - Processor: URLDownloader
+    Arguments:
+      filename: "%NAME%.msi"
+      url: "https://www.qgis.org/downloads/%match%"
+
+  - Processor: com.github.hansen-m.SharedProcessors/MSIInfoVersionProvider
+    Arguments:
+      msi_path: "%RECIPE_CACHE_DIR%/%NAME%/DuoWindowsLogon64.msi"
+
+  - Processor: EndOfCheckPhase
