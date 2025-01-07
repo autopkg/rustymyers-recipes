@@ -19,6 +19,6 @@ Process:
 
   - Processor: com.github.hansen-m.SharedProcessors/MSIInfoVersionProvider
     Arguments:
-      msi_path: "%RECIPE_CACHE_DIR%/%NAME%/DuoWindowsLogon64.msi"
+      msi_path: "%pathname%"
 
   - Processor: EndOfCheckPhase
