@@ -9,7 +9,7 @@ Process:
     Arguments:
       re_flags:
         - IGNORECASE
-      re_pattern: https:\/\/[^"]*win64/Wireshark-(?P<version>[0-9]{1,4}.{1,4})-x64\.exe
+      re_pattern: (https:\/\/[^"]*win64/Wireshark-(?P<version>[0-9]{1,4}.{1,4})-x64\.exe)
       url: https://www.wireshark.org/download.html
 
   - Processor: URLDownloader
