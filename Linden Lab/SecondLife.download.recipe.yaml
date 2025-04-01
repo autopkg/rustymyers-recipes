@@ -8,7 +8,7 @@ Input:
 Process:
 - Processor: URLTextSearcher
   Arguments:
-    re_pattern: a href=.?(?P<url>http.*?Second_Life.*?\.dmg)
+    re_pattern: \\u003e(?P<url>https://viewer.+?Second_Life.*?\.dmg)
     url: https://secondlife.com/support/downloads/
 
 - Processor: URLDownloader
