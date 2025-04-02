@@ -1,0 +1,12 @@
+Description: Downloads Dedoose and makes a package.
+Identifier: com.github.rustymyers.pkg.Dedoose
+ParentRecipe: com.github.rustymyers.download.Dedoose
+MinimumVersion: "1.0"
+
+Input:
+  NAME: Dedoose
+
+Process:
+  - Processor: AppPkgCreator
+    Arguments:
+      bundleid: com.github.pkg.dedoose
