@@ -1,7 +1,7 @@
 Description: Downloads Dedoose for macOS
 Identifier: com.github.rustymyers.download.Dedoose
 MinimumVersion: 0.2.9
-
+# Regex Testing https://regex101.com/r/TSk9hK/1
 Input:
   NAME: Dedoose
   SEARCH_URL: https://www.dedoose.com/resources/articledetail/dedoose-desktop-app
