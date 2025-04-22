@@ -5,7 +5,7 @@ MinimumVersion: 0.2.9
 Input:
   NAME: Dedoose
   SEARCH_URL: https://www.dedoose.com/resources/articledetail/dedoose-desktop-app
-  SEARCH_PATTERN: (?P<url_match>\/\/.*Dedoose-(?P<version>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}).dmg)"
+  SEARCH_PATTERN: (?P<url_match>https:\/\/downloads.*Dedoose-(?P<version>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}).dmg)"
 
 Process:
   - Processor: URLTextSearcher
