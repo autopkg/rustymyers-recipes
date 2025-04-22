@@ -17,6 +17,6 @@ Process:
     Arguments:
       request_headers:
         user-agent: "%USER_AGENT%"
-      url: "https:%url_match%"
+      url: "%url_match%"
 
   - Processor: EndOfCheckPhase
