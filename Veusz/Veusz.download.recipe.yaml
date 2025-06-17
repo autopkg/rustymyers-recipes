@@ -22,6 +22,6 @@ Process:
 - Processor: CodeSignatureVerifier
   Arguments:
     input_path: '%pathname%/Veusz.app'
-    requirement: cdhash H"d50366772163beb7f32da37bec9602424e6cd9e7"
+    requirement: cdhash H"c3e52db68980c9fb619d4eba87c48eb073c33983"
 
 - Processor: EndOfCheckPhase
