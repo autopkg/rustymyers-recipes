@@ -22,8 +22,4 @@ Process:
         user-agent: "%USER_AGENT%"
       url: "%url%"
 
-  - Processor: com.github.hansen-m.SharedProcessors/HachoirMetaDataProvider
-    Arguments:
-      file_path: "%pathname%"
-
   - Processor: EndOfCheckPhase
