@@ -1,0 +1,29 @@
+Description: |
+  Downloads the current release version of Audacity via the project
+  website. The downloads redirect to a fosshub.com download page, which
+  is also searched for a download link. Permission has been received for Penn State to automate the download.
+  Note: the Audacity.app code object is not signed at all."
+Identifier: com.github.rustymyers.download.Audacity-Win
+MinimumVersion: 0.2.9
+
+Input:
+  NAME: Audacity-Win
+  USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.28.10 (KHTML, like Gecko) Version/6.0.3 Safari/536.28.10
+
+Process:
+  - Processor: com.github.rustymyers.SharedProcessors/FossHubURLProvider
+    Arguments:
+      app_name: Audacity
+      app_type: "Windows 64bit Installer"
+
+  - Processor: URLDownloader
+    Arguments:
+      request_headers:
+        user-agent: "%USER_AGENT%"
+      url: "%url%"
+
+  - Processor: com.github.hansen-m.SharedProcessors/HachoirMetaDataProvider
+    Arguments:
+      file_path: "%pathname%"
+
+  - Processor: EndOfCheckPhase
