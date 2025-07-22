@@ -8,18 +8,18 @@ MinimumVersion: 0.2.9
 
 Input:
   NAME: Audacity-Win
-  USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.28.10 (KHTML, like Gecko) Version/6.0.3 Safari/536.28.10
+  SEARCH_URL: https://www.audacityteam.org/download/windows/
+  SEARCH_PATTERN: (https:\/\/.*Audacity-(?P<version>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,4})/.*-64bit.exe)
+  USER_AGENT: Mozilla/5.0 (Windows NT 6.3; Win64, x64; Trident/7.0; rv:11.0) like Gecko
 
 Process:
-  - Processor: com.github.rustymyers.SharedProcessors/FossHubURLProvider
+  - Processor: GitHubReleasesInfoProvider
     Arguments:
-      app_name: Audacity
-      app_type: "Windows 64-bit Installer"
+      github_repo: audacity/audacity
+      asset_regex: ".*audacity-win-(?P<version>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,4})-64bit.exe"
 
   - Processor: URLDownloader
     Arguments:
       request_headers:
         user-agent: "%USER_AGENT%"
       url: "%url%"
-
-  - Processor: EndOfCheckPhase
