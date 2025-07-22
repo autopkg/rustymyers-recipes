@@ -14,7 +14,7 @@ Process:
   - Processor: com.github.rustymyers.SharedProcessors/FossHubURLProvider
     Arguments:
       app_name: Audacity
-      app_type: "Windows 64bit Installer"
+      app_type: "Windows 64-bit Installer"
 
   - Processor: URLDownloader
     Arguments:
