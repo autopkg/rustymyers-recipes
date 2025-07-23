@@ -41,7 +41,7 @@ class readTextFile(Processor):
         if verbosity > 1:
             self.output("Checking file_path for text: {0}".format(file_path))
         try:
-            with open("readme.txt") as f:
+            with open(file_path) as f:
                 text_output = f.readlines()
         except:
             raise ProcessorError("Failed to get text from: %s" % file_path)
