@@ -1,9 +1,12 @@
-Shared Processors
-===============
+# Shared Processors
+
+## readTextFile.py
+
+Return the contents of a file\_path
 
 ## createISOProvider.py
 
-Takes a source_path and creates an iso from it. Outputs 'iso_path' with absolute path. 
+Takes a source\_path and creates an iso from it. Outputs 'iso\_path' with absolute path.
 
 ## SourceForgeURLProvider.py
 
@@ -11,10 +14,11 @@ Older provider to download releases from SourceForge projects. Not sure if it st
 
 ## FossHubURLProvider.py
 
-FossHub provides whitelisted IPs for organizations that want to cache downloads for redistribution internally. 
+FossHub provides whitelisted IPs for organizations that want to cache downloads for redistribution internally.
 
 Basic use for the processor is to pass the app name, which can be found within the json here: https://university.fosshub.com/projects.json
-You should pass the app_type to be sure you're getting the download requested. Check the json for the "type" you want, it has to match exactly in app_type. Sometimes the type has multiple options for platform or might have an additional space in the type. Create an override with these options of an existing recipe.
+You should pass the app\_type to be sure you're getting the download requested. Check the json for the "type" you want, it has to match exactly in app\_type. Sometimes the type has multiple options for platform or might have an additional space in the type. Create an override with these options of an existing recipe.
+
 ```
 <dict>
     <key>Processor</key>
@@ -29,13 +33,14 @@ You should pass the app_type to be sure you're getting the download requested. C
 </dict>
 ```
 
-Additional inputs are: 
-* projects_url = override projects.json URL
-* app_type = download specific release of project (defaults to "macOS DMG").
+Additional inputs are:
 
-Current list of app_type options from projects.json. Use autopkg run -vvv with a recipe that calls the processor to list all current app\_types.
+* projects\_url = override projects.json URL
+* app\_type = download specific release of project (defaults to "macOS DMG").
 
-```
+Current list of app\_type options from projects.json. Use autopkg run -vvv with a recipe that calls the processor to list all current app\_types.
+
+````
 All PlugIns - 32-bit Windows Installer
 64-bit Windows Portable
 Windows portable (64-bit)
@@ -231,3 +236,4 @@ For more information contact: admin@fosshub.com
 ## BoxDriveDownloadURLProvider.py
 
 This provider returns the rollout-version of BoxDrive when an update is being published to clinets early. It returns the current version when there is no rollout-version availiable.
+````
