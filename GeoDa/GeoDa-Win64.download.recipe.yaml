@@ -4,8 +4,6 @@ MinimumVersion: 0.2.9
 
 Input:
   NAME: GeoDa
-  SEARCH_URL: https://geodacenter.github.io/download_windows.html
-  USER_AGENT: Mozilla/5.0 (Windows NT 6.3; Win64, x64; Trident/7.0; rv:11.0) like Gecko
   RELEASE_REGEX: .*-x64-installer.zip
 
 Process:
