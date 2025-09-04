@@ -4,7 +4,7 @@ MinimumVersion: 0.4.0
 
 Input:
   NAME: WacomTablet
-  DOWNLOAD_PATTERN: (?P<url>(https:\/\/cdn\.wacom\.com\/u\/productsupport\/drivers\/mac\/professional\/WacomTablet_+(?P<version>([\d].)+(\d))\.dmg))
+  DOWNLOAD_PATTERN: (?P<url>(https:\/\/cdn\.wacom\.com\/u\/productsupport\/drivers\/mac\/professional\/WacomTablet_(?P<version>\d+(?:\.\d+)*(?:-\d+)?)\.dmg))
   DOWNLOAD_URL: https://www.wacom.com/en-us/support/product-support/drivers
 
 Process:
