@@ -4,7 +4,7 @@ MinimumVersion: 0.4.0
 
 Input:
   NAME: Duo
-  DOWNLOAD_URL: http://dl.duosecurity.com/DuoWinLogon_MSIs_Policies_and_Documentation-latest.zip
+  DOWNLOAD_URL: https://dl.duosecurity.com/DuoWinLogon_MSIs_Policies_and_Documentation-latest.zip
   USER_AGENT: Mozilla/5.0 (Windows NT 10.0; Win64; x64)
 
 Process:

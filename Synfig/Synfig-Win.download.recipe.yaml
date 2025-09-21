@@ -4,7 +4,7 @@ MinimumVersion: 0.2.9
 
 Input:
   NAME: Synfig
-  SEARCH_URL: http://www.fosshub.com/Synfig.html
+  SEARCH_URL: https://www.fosshub.com/Synfig.html
   SEARCH_PATTERN: \/Synfig.html.(synfigstudio-([0-9].[0-9].[0-9]))-64bit.exe
   SEARCH_PATTERN2: (https.*-64bit.exe)
   USER_AGENT: Mozilla/5.0 (Windows NT 6.3; Win64, x64; Trident/7.0; rv:11.0) like Gecko
