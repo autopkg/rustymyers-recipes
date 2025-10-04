@@ -30,7 +30,6 @@ Process:
         path: Library/PrivilegedHelperTools
         user: root
       id: com.github.rustymyers.LoginLog.pkg
-      options: purge_ds_store
       pkgdir: '%RECIPE_CACHE_DIR%/'
     pkgname: '%NAME%-%version%'
     version: '%version%'
