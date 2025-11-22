@@ -16,9 +16,9 @@ Process:
   Arguments:
     filename: '%BIGFIXNAME%.dmg'
 
+- Processor: EndOfCheckPhase
+
 - Processor: Versioner
   Arguments:
     input_plist_path: '%pathname%/Vine Server.app/Contents/Info.plist'
     plist_version_key: CFBundleShortVersionString
-
-- Processor: EndOfCheckPhase
