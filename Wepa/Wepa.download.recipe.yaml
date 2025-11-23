@@ -11,6 +11,8 @@ Process:
     filename: WepaPrintApp.pkg
     url: https://www.wepanow.com/downloads/wepa%20Print%20App.pkg
 
+- Processor: EndOfCheckPhase
+
 - Processor: CodeSignatureVerifier
   Arguments:
     expected_authority_names:
@@ -18,8 +20,6 @@ Process:
     - Developer ID Certification Authority
     - Apple Root CA
     input_path: '%pathname%'
-
-- Processor: EndOfCheckPhase
 
 - Processor: FlatPkgUnpacker
   Arguments:

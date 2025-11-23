@@ -23,3 +23,5 @@ Process:
       request_headers:
         user-agent: "%USER_AGENT%"
       url: "%url%"
+
+  - Processor: EndOfCheckPhase
