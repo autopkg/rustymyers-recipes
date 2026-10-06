@@ -8,14 +8,16 @@ Input:
   DOWNLOAD_URL: https://www.wacom.com/en-us/support/product-support/drivers
 
 Process:
-- Processor: URLTextSearcher
-  Arguments:
-    re_pattern: '%DOWNLOAD_PATTERN%'
-    url: '%DOWNLOAD_URL%'
+  - Processor: URLTextSearcher
+    Arguments:
+      re_pattern: "%DOWNLOAD_PATTERN%"
+      url: "%DOWNLOAD_URL%"
+      request_headers:
+        user-agent: Mozilla/5.0
 
-- Processor: URLDownloader
-  Arguments:
-    filename: WacomTablet-Win.exe
-    url: '%match%'
+  - Processor: URLDownloader
+    Arguments:
+      filename: WacomTablet-Win.exe
+      url: "%match%"
 
-- Processor: EndOfCheckPhase
+  - Processor: EndOfCheckPhase
