@@ -12,6 +12,8 @@ Process:
     Arguments:
       re_pattern: "%DOWNLOAD_PATTERN%"
       url: "%DOWNLOAD_URL%"
+      request_headers:
+        user-agent: Mozilla/5.0
 
   - Processor: URLDownloader
     Arguments:
