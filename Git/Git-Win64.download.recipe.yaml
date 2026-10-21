@@ -10,10 +10,11 @@ Process:
     Arguments:
       github_repo: git-for-windows/git
       asset_regex: "Git-(?P<version_exe>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})-%BUILD%-bit.exe"
-#   - Processor: URLTextSearcher
-#     Arguments:
-#       url: https://github.com/git-for-windows/git/releases/tag/v%version%
-#       re_pattern: "Git-(?P<version_exe>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})-%BUILD%-bit.exe"
+  - Processor: URLTextSearcher
+    Arguments:
+      url: https://github.com/git-for-windows/git/releases/tag/v%version%
+      re_pattern: "Git-(?P<version>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})-%BUILD%-bit.exe"
+      result_output_var_name: version_exe
   - Processor: URLDownloader
     Arguments:
       filename: "%NAME%-%version%.exe"
